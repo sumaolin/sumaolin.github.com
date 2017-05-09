@@ -1,0 +1,864 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="baidu-site-verification" content="aH9Bnk1gKE" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<!-- start Mixpanel -->
+<script type="text/javascript">
+(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"http://datalink.kmsocial.cn/mixpanel.min.js".match(/^\/\//)?"https:http://datalink.kmsocial.cn/mixpanel.min.js":"http://datalink.kmsocial.cn/mixpanel.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+mixpanel.init("8cad7aab113488a3d7e96b939f5b5add");
+</script>
+<!-- end Mixpanel -->
+
+    <script type="text/javascript">
+    mixpanel.register({
+        'uid': 'lilihuan@kmsocial.com',
+        'srcuid': 'lihuixi@kmsocial.com',
+        'platform': 'weixin',
+        'urlid': '苏茂林博客 详情页'
+    });
+    </script>
+  
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+<link rel="stylesheet" type="text/css" href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" />
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.2"/>
+
+
+    <meta name="description" content="苏茂林, 个人博客, Kevin.Su's Blog, 关于前端技术的的杂记！" />
+
+
+
+  <meta name="keywords" content="F2E,node,f2e,yeoman,kmapp,generator," />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="苏茂林" type="application/atom+xml" />
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/./favicon.ico?v=0.4.5.2" />
+
+
+<meta name="description" content="年前整理的一篇文章：自定义Yeoman生成器 —— JSCON-简时空, 因为原链接的可读性太差，就通过MarkDown语法重新整理了下，根据该文章 构建了自己的yeoman generator ：generator-kmapp, 只是简单的实现了模板复制，安装bower , 和npm 依赖模块的功能，这样实现一键构建业务中的开发环境：本地服务器，自动刷新，less自动编译，接口转发等功能。">
+<meta name="keywords" content="F2E,node,f2e,yeoman,kmapp,generator">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自定义Yeoman生成器">
+<meta property="og:url" content="http://sumaolin.com/2016/04/03/自定义Yeoman生成器/index.html">
+<meta property="og:site_name" content="苏茂林">
+<meta property="og:description" content="年前整理的一篇文章：自定义Yeoman生成器 —— JSCON-简时空, 因为原链接的可读性太差，就通过MarkDown语法重新整理了下，根据该文章 构建了自己的yeoman generator ：generator-kmapp, 只是简单的实现了模板复制，安装bower , 和npm 依赖模块的功能，这样实现一键构建业务中的开发环境：本地服务器，自动刷新，less自动编译，接口转发等功能。">
+<meta property="og:updated_time" content="2017-05-09T23:11:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自定义Yeoman生成器">
+<meta name="twitter:description" content="年前整理的一篇文章：自定义Yeoman生成器 —— JSCON-简时空, 因为原链接的可读性太差，就通过MarkDown语法重新整理了下，根据该文章 构建了自己的yeoman generator ：generator-kmapp, 只是简单的实现了模板复制，安装bower , 和npm 依赖模块的功能，这样实现一键构建业务中的开发环境：本地服务器，自动刷新，less自动编译，接口转发等功能。">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+
+
+  <title> 自定义Yeoman生成器 | 苏茂林 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52231954-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?154101e86ea67b8b420e04051c6e0b2a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">苏茂林</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Kevin.Su's Blog</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                自定义Yeoman生成器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-04-03T07:51:23+08:00" content="2016-04-03">
+              2016-04-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/03/自定义Yeoman生成器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/03/自定义Yeoman生成器/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>年前整理的一篇文章：<a href="http://www.jscon.co/coding/frontend/yeoman_generator.html" target="_blank" rel="external">自定义Yeoman生成器 —— JSCON-简时空</a>, 因为原链接的可读性太差，就通过MarkDown语法重新整理了下，根据该文章 构建了自己的yeoman generator ：<a href="https://github.com/sumaolin/generator-kmapp" target="_blank" rel="external">generator-kmapp</a>, 只是简单的实现了模板复制，安装bower , 和npm 依赖模块的功能，这样实现一键构建业务中的开发环境：本地服务器，自动刷新，less自动编译，接口转发等功能。<br><a id="more"></a></p>
+<h2 id="1-Getting-Started"><a href="#1-Getting-Started" class="headerlink" title="1 Getting Started"></a>1 Getting Started</h2><h3 id="1-1、设置Node模块"><a href="#1-1、设置Node模块" class="headerlink" title="1.1、设置Node模块"></a>1.1、设置Node模块</h3><p>Yeoman提供了generator-generator方便快速编写自己的生成器。</p>
+<blockquote>
+<p>安装: npm install -g generator-generator</p>
+<p>运行: yo generator</p>
+</blockquote>
+<ul>
+<li>创建一个名为generator-name的文件夹（name为你的生成器名）;【important】</li>
+<li>创建package.json文件，这是NodeJS模块的“信息图”，可以手动或者使用命令npm init生成</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">"generator-name"</span>,</div><div class="line">  <span class="string">"version"</span>: <span class="string">"0.1.0"</span>,</div><div class="line">  <span class="string">"description"</span>: <span class="string">""</span>,</div><div class="line">  <span class="string">"keywords"</span>: [<span class="string">"yeoman-generator"</span>],</div><div class="line">  <span class="string">"dependencies"</span>: &#123;</div><div class="line">    <span class="string">"yeoman-generator"</span>: <span class="string">"^0.17.3"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>name属性必须要有generator-前缀；keywords属性必须包含yeoman-generator，务必确保是最新的，可运行命令npm install –save yeoman-generator完成更新/安装</p>
+</blockquote>
+<h3 id="1-2、文件树结构"><a href="#1-2、文件树结构" class="headerlink" title="1.2、文件树结构"></a>1.2、文件树结构</h3><ol>
+<li>当调用yo name命令时，默认调用的是app生成器，对于的逻辑放置在app/文件夹下</li>
+<li>当调用yo name:subcommand命令时，必须要有对于的subcommand/文件夹</li>
+</ol>
+<p>如果文件结构如下，则该生成器暴露yo name和yo name:router两个命令</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">├───package.json</div><div class="line">├───app/</div><div class="line">│   └───index.js</div><div class="line">└───router/</div><div class="line">    └───index.js</div></pre></td></tr></table></figure>
+<p>如果你不想把所有代码都放在根目录下，Yeoman提供了另外的一种方式：可以放在generators/目录下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">├───package.json</div><div class="line">└───generators/</div><div class="line">    ├───app/</div><div class="line">    │   └───index.js</div><div class="line">    └───router/</div><div class="line">        └───index.js</div></pre></td></tr></table></figure>
+<h3 id="1-3、继承generator"><a href="#1-3、继承generator" class="headerlink" title="1.3、继承generator"></a>1.3、继承generator</h3><p>结构写好了，需要开始写实际的逻辑代码。Yeoman提供了基础生成器供你继承，这些基础生成器提供了很多方便的方法供你调用。基本写法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> generators = <span class="built_in">require</span>(<span class="string">'yeoman-generator'</span>);</div><div class="line"><span class="built_in">module</span>.exports = generators.Base.extend();</div></pre></td></tr></table></figure>
+<p>如果你的生成器需要name参数（比如yo name:router foo中的foo），想将它赋给this.name的话：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> generators = <span class="built_in">require</span>(<span class="string">'yeoman-generator'</span>);</div><div class="line"><span class="built_in">module</span>.exports = generators.NamedBase.extend();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>上面两种方式都能用于创建app生成器或者子生成器，Base多用于app生成器，NamedBase多用于需要指定文件名的子生成器</p>
+</blockquote>
+<h3 id="1-4、重写构造函数"><a href="#1-4、重写构造函数" class="headerlink" title="1.4、重写构造函数"></a>1.4、重写构造函数</h3><p>有些方法只能在constructor方法中调用，常用于状态控制；可以传入构造函数重写默认的构造函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = generators.Base.extend(&#123;</div><div class="line">  <span class="comment">// The name `constructor` is important here</span></div><div class="line">  <span class="keyword">constructor</span>: function () &#123;</div><div class="line">    <span class="comment">// Calling the super constructor is important so our generator is correctly set up</span></div><div class="line">    generators.Base.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line"></div><div class="line">    <span class="comment">// Next, add your custom code</span></div><div class="line">    <span class="keyword">this</span>.option(<span class="string">'coffee'</span>); <span class="comment">// This method adds support for a `--coffee` flag</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="1-5、添加方法"><a href="#1-5、添加方法" class="headerlink" title="1.5、添加方法"></a>1.5、添加方法</h3><p>一般给原型添加的方法是按顺序执行的，不过后面我们会看到一些特殊的方法会触发不同的执行顺序：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = generators.Base.extend(&#123;</div><div class="line">  <span class="attr">method1</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'method 1 just ran'</span>);</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">method2</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'method 2 just ran'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="1-6、运行生成器"><a href="#1-6、运行生成器" class="headerlink" title="1.6、运行生成器"></a>1.6、运行生成器</h3><p>到了这一步，你已经拥有一个可以运行的生成器了。下一步就是检验生成器是否按自己的逻辑运行。由于是在本地开发生成器，在全局npm模块中并不存在，需要手动链接。进入generator-name/文件夹，运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm link</div></pre></td></tr></table></figure></p>
+<p>这将自动安装工程依赖包，同时将本地文件链接进全局模块；运行完毕之后，你就可以调用yo name并看到之前定义的console.log信息。</p>
+<p>至此，恭喜你完成了简单的生成器！</p>
+<h3 id="1-7、找到工程根目录"><a href="#1-7、找到工程根目录" class="headerlink" title="1.7、找到工程根目录"></a>1.7、找到工程根目录</h3><p>当运行一个生成器，Yeoman将计算当前的文件目录信息。最为关键的是，Yeoman将.yo-rc.json所在的目录作为工程的根目录，之后Yeoman将当前文件目录跳转到根目录下运行请求的生成器。这个.yo-rc.json文件是由Storage模块创建的，在生成器内部调用this.config.save()方法就会创建它。所以，如果你发现你的生成器不是在你当前工作目录下运行，请确保。yo-rc.json不存在你目录的其他层级中</p>
+<h2 id="2、运行上下文"><a href="#2、运行上下文" class="headerlink" title="2、运行上下文"></a>2、运行上下文</h2><h3 id="2-1、静态方法都是Action"><a href="#2-1、静态方法都是Action" class="headerlink" title="2.1、静态方法都是Action"></a>2.1、静态方法都是Action</h3><p>如果一个函数直接作为生成器的原型（prototype）的属性，则会当做action自动（按顺序）执行。如何声明不会自动执行的辅助函数以及私有函数呢？有三种方法：</p>
+<ol>
+<li>给方法前面添加前缀（例如：_method）</li>
+<li><p>使用实例函数声明（this.mehtod）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">generators.Base.extend(&#123;</div><div class="line">  <span class="attr">init</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.helperMethod = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'won\'t be called automatically'</span>);</div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>继承自父类生成器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> MyBase = generators.Base.extend(&#123;</div><div class="line">  <span class="attr">helper</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'won\'t be called automatically'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = MyBase.extend(&#123;</div><div class="line">  <span class="attr">exec</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.helper();</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="2-2、运行顺序"><a href="#2-2、运行顺序" class="headerlink" title="2.2、运行顺序"></a>2.2、运行顺序</h3><p>Yeoman是按照优先级顺序依次执行所定义的方法。当你定义的函数名字是Yeoman定义的优先级函数名时，会自动将该函数列入到所在优先级队列中，否则就会列入到default优先层级队列中。</p>
+<p>依次执行的方法名称为：</p>
+<ol>
+<li><strong>initializing</strong> - 你的初始化方法（检测当前目录状态，获取配置等）</li>
+<li><strong>prompting</strong> – 给用户展示选项提示（调用this.prompt()）</li>
+<li><strong>configuring</strong> – 保存用户配置项，同时配置工程（创建.editorconfig文件或者其他metadata文件）</li>
+<li><strong>default</strong></li>
+<li><strong>writing</strong> – 用于生成和生成器相关的文件（比如routes,controllers等）</li>
+<li><strong>conflicts</strong> – 用于处理冲突异常（内部使用）</li>
+<li><strong>install</strong> – 用于安装相关库 (npm, bower)</li>
+<li><strong>end</strong> – 最后调用，常用于清理、道别等</li>
+</ol>
+<h2 id="3、UI"><a href="#3、UI" class="headerlink" title="3、UI"></a>3、UI</h2><p>Yeoman默认是跑在终端的，但不限于终端。因此记住，不要使用console.log()或者process.stdout.write()向用户反馈信息，应当使用generator.log方法。</p>
+<h3 id="3-1、提示框"><a href="#3-1、提示框" class="headerlink" title="3.1、提示框"></a>3.1、提示框</h3><p>Yeoman中最为主要的UI交互就是提示框，由Inquirer.js组件提供。使用下列方式调用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = generators.Base.extend(&#123;</div><div class="line">  <span class="attr">prompting</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> done = <span class="keyword">this</span>.async();</div><div class="line">    <span class="keyword">this</span>.prompt(&#123;</div><div class="line">      <span class="attr">type</span>    : <span class="string">'input'</span>,</div><div class="line">      <span class="attr">name</span>    : <span class="string">'name'</span>,</div><div class="line">      <span class="attr">message</span> : <span class="string">'Your project name'</span>,</div><div class="line">      <span class="attr">default</span> : <span class="keyword">this</span>.appname <span class="comment">// Default to current folder name</span></div><div class="line">    &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">answers</span>) </span>&#123;</div><div class="line">      <span class="keyword">this</span>.log(answers.name);</div><div class="line">      done();</div><div class="line">    &#125;.bind(<span class="keyword">this</span>));</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这里我们使用promoting的优先层级 。由于咨询用户是一个异步的过程，会卡住命令逻辑的运行，所以需要调用yo的异步方法：<code>var cb = this.async();</code></p>
+</blockquote>
+<h3 id="3-2、记住用户偏好"><a href="#3-2、记住用户偏好" class="headerlink" title="3.2、记住用户偏好"></a>3.2、记住用户偏好</h3><p>当用户运行你的生成器时，很多时候会输入相同的答案；Yeoman扩展了Inquirer.js的API，额外增加了store的属性表示用户可以将之前填写过的答案作为后续的默认答案：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.prompt(&#123;</div><div class="line">  <span class="attr">type</span>    : <span class="string">'input'</span>,</div><div class="line">  <span class="attr">name</span>    : <span class="string">'username'</span>,</div><div class="line">  <span class="attr">message</span> : <span class="string">'What\'s your Github username'</span>,</div><div class="line">  <span class="attr">store</span>   : <span class="literal">true</span></div><div class="line">&#125;, callback);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>提供默认答案时，程序会强制用户输入</p>
+</blockquote>
+<h3 id="3-3、命令行参数"><a href="#3-3、命令行参数" class="headerlink" title="3.3、命令行参数"></a>3.3、命令行参数</h3><p>可以直接像在命令中传入参数：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yo webapp my-project</div></pre></td></tr></table></figure></p>
+<p>在这里，my-project作为第一个参数。为了提示系统我们期望用户传入参数，需要调用generator.argument()方法，该方法接受name作为参数，以及额外的限制条件。</p>
+<blockquote>
+<p> 该argument方法必须在构造器中调用。这些条件是（key/value型）：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">'desc'</span>： <span class="comment">//Description for the argument</span></div><div class="line"><span class="string">'required'</span>： <span class="comment">// Boolean whether it is required</span></div><div class="line"><span class="string">'optional'</span>： <span class="comment">//Boolean whether it is optional</span></div><div class="line"><span class="string">'type'</span>： <span class="comment">// String, Number, Array, or Object</span></div><div class="line"><span class="string">'defaults'</span>： <span class="comment">//Default value for this argument</span></div><div class="line"><span class="string">'banner'</span>:  <span class="comment">//String to show on usage notes (this one is provided by default)</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>示例代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = generators.Base.extend(&#123;</div><div class="line">  <span class="comment">// note: arguments and options should be defined in the constructor.</span></div><div class="line">  <span class="keyword">constructor</span>: function () &#123;</div><div class="line">    generators.Base.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line"></div><div class="line">    <span class="comment">// This makes `appname` a required argument.</span></div><div class="line">    <span class="keyword">this</span>.argument(<span class="string">'appname'</span>, &#123; <span class="attr">type</span>: <span class="built_in">String</span>, <span class="attr">required</span>: <span class="literal">true</span> &#125;);</div><div class="line">    <span class="comment">// And you can then access it later on this way; e.g. CamelCased</span></div><div class="line">    <span class="keyword">this</span>.appname = <span class="keyword">this</span>._.camelize(<span class="keyword">this</span>.appname);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="3-4、选项"><a href="#3-4、选项" class="headerlink" title="3.4、选项"></a>3.4、选项</h3><p>选项看上去像参数，不过它前面多了两短横杠（flags）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yo webapp --coffee</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>使用generator.option()方法获取选项值，该方法也有可选的限制属性（key/value型）：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="string">'desc'</span>： <span class="comment">// Description for the option</span></div><div class="line"><span class="string">'type'</span> ：<span class="comment">// Either Boolean, String or Number</span></div><div class="line"><span class="string">'defaults'</span>： <span class="comment">// Default value</span></div><div class="line"><span class="string">'hide'</span>： <span class="comment">//Boolean whether to hide from help</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = generators.Base.extend(&#123;</div><div class="line">  <span class="comment">// note: arguments and options should be defined in the constructor.</span></div><div class="line">  <span class="keyword">constructor</span>: function () &#123;</div><div class="line">    generators.Base.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line"></div><div class="line">    <span class="comment">// This method adds support for a `--coffee` flag</span></div><div class="line">    <span class="keyword">this</span>.option(<span class="string">'coffee'</span>);</div><div class="line">    <span class="comment">// And you can then access it later on this way; e.g.</span></div><div class="line">    <span class="keyword">this</span>.scriptSuffix = (<span class="keyword">this</span>.options.coffee ? <span class="string">".coffee"</span>: <span class="string">".js"</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h2 id="4、处理依赖"><a href="#4、处理依赖" class="headerlink" title="4、处理依赖"></a>4、处理依赖</h2><p>在运行生成器时，经常会伴随着npm和bower命令去安装依赖文件，Yeoman已经将这些功能抽离出来方便用户使用</p>
+<h3 id="4-1、npm"><a href="#4-1、npm" class="headerlink" title="4.1、npm"></a>4.1、npm</h3><p>使用generator.npmInstall()运行npm安装命令，无论你调用多少次，Yeoman会确保该命令只执行一次<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">generators.Base.extend(&#123;</div><div class="line">  <span class="attr">installingLodash</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> done = <span class="keyword">this</span>.async();</div><div class="line">    <span class="keyword">this</span>.npmInstall([<span class="string">'lodash'</span>], &#123; <span class="string">'saveDev'</span>: <span class="literal">true</span> &#125;, done);</div><div class="line">  &#125;</div><div class="line">&#125;):</div></pre></td></tr></table></figure></p>
+<p>上面的代码等价于命令行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install lodash --save-dev</div></pre></td></tr></table></figure></p>
+<h3 id="4-2、bower"><a href="#4-2、bower" class="headerlink" title="4.2、bower"></a>4.2、bower</h3><p>使用generator.bowerInstall()运行bower安装命令，无论你调用多少次，Yeoman会确保该命令只执行一次<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">generators.Base.extend(&#123;</div><div class="line">  <span class="attr">end</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.spawnCommand(<span class="string">'composer'</span>, [<span class="string">'install'</span>]);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>记得在end队列中调用spawnCommand命令,否则用户没有耐心等那么久的。</p>
+</blockquote>
+<h2 id="5、文件系统"><a href="#5、文件系统" class="headerlink" title="5、文件系统"></a>5、文件系统</h2><p>方便文件流的输入输出，Yeoman使用两种位置环境： <strong>destination context</strong>  和 <strong>template context</strong></p>
+<h3 id="5-1、destination-contex-目标位置上下文"><a href="#5-1、destination-contex-目标位置上下文" class="headerlink" title="5.1、destination contex 目标位置上下文"></a>5.1、destination contex 目标位置上下文</h3><p>destination context 目标位置上下文，这里的“目标”是指你想架构应用的位置。这个位置要么是当前文件夹，要么就是文件.yo-rc.json所在的父文件夹位置；</p>
+<blockquote>
+<p>该.yo-rc.json文件确保所有的终端用户都以同样的方式方法生成器所在的子文件（夹）</p>
+</blockquote>
+<p>使用<code>generator.destinationRoot()</code>获取目标位置上下文；也可以手动传参重新设置，当然没有人愿意那么做的；用<code>generator.destinationPath(&#39;sub/path&#39;)</code>拼接所需要的路径字符串。示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Given destination root is ~/projects</span></div><div class="line">generators.Base.extend(&#123;</div><div class="line">  <span class="attr">paths</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.destinationRoot();</div><div class="line">    <span class="comment">// returns '~/projects'</span></div><div class="line"></div><div class="line">    <span class="keyword">this</span>.destinationPath(<span class="string">'index.js'</span>);</div><div class="line">    <span class="comment">// returns '~/projects/index.js'</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="5-2、template-context-模板位置上下文"><a href="#5-2、template-context-模板位置上下文" class="headerlink" title="5.2、template context 模板位置上下文"></a>5.2、template context 模板位置上下文</h3><p>template context 模板位置上下文 ：就是你模板文件所在的文件夹位置，这个文件夹基本上是你读取并拷贝文件的地方。默认的template context是<code>./templates/</code>，你可以通过<code>generator.sourceRoot(&#39;new/template/path&#39;)</code>指定新的模板文件夹位置；与上面类似，可使用<code>generator.sourceRoot()</code>获取模板位置，使用<code>generator.templatePath(&#39;app/index.js&#39;)</code>拼接路径。示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">generators.Base.extend(&#123;</div><div class="line">  <span class="attr">paths</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.sourceRoot();</div><div class="line">    <span class="comment">// returns './templates'</span></div><div class="line"></div><div class="line">    <span class="keyword">this</span>.templatePath(<span class="string">'index.js'</span>);</div><div class="line">    <span class="comment">// returns '~/templates/index.js'</span></div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="5-3、文件操作API"><a href="#5-3、文件操作API" class="headerlink" title="5.3、文件操作API"></a>5.3、文件操作API</h3><p>Yeoman把所有的文件方法都放在this.fs中了，它是<a href="https://github.com/sboudrias/mem-fs-editor" target="_blank" rel="external">mem-fs-editor</a>的一个示例对象，可自行查看API接口。<br><strong>示例：拷贝模板文件</strong><br>假如。、templates/index.html文件内容为：<br><figure class="highlight vbscript-html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>&lt;%= title %&gt;<span class="xml"><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>我们使用copyTpl方法拷贝模板：（更多参看<a href="https://lodash.com/docs#template" target="_blank" rel="external">Lodash template syntax</a>）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">generators.Base.extend(&#123;</div><div class="line">  <span class="attr">writing</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.fs.copyTpl(</div><div class="line">      <span class="keyword">this</span>.templatePath(<span class="string">'index.html'</span>),</div><div class="line">      <span class="keyword">this</span>.destinationPath(<span class="string">'public/index.html'</span>),</div><div class="line">      &#123; <span class="attr">title</span>: <span class="string">'Templating with Yeoman'</span> &#125;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>一旦生成器运行完成，我们就会获得public/index.html<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Templating with Yeoman</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Yeoman仍保留了旧的文件API，可参看 <a href="http://yeoman.github.io/generator/actions.html" target="_blank" rel="external">API documentation</a> 。旧的文件API总是假设文件来自template context，写文件总是在destination context中，所以它们不要求你传入文件路径信息，程序会自动处理</p>
+</blockquote>
+<p><strong>建议</strong>：尽可能使用新的<code>fs</code>API，它的使用起来比较清晰</p>
+<h2 id="6、储存用户设置"><a href="#6、储存用户设置" class="headerlink" title="6、储存用户设置"></a>6、储存用户设置</h2><p>常常需要存储用户的设置项并在子生成器中使用，比如用户使用什么编程语言（比如使用CoffeeScript？）等这些配置项都存储在.yo-rc.json中（使用 <a href="http://yeoman.github.io/generator/Storage.html" target="_blank" rel="external">Yeoman Storage API</a>.）,可以通过<code>generator.config</code>对象获取API方法。</p>
+<h3 id="6-1、常用方法"><a href="#6-1、常用方法" class="headerlink" title="6.1、常用方法"></a>6.1、常用方法</h3><ol>
+<li><p><code>generator.config.save()</code><br>保存配置项到文件.yo-rc.json文件中（若文件不存在将自动 创建），由于该文件决定工程的根目录，因而一个最佳实践就是：就算什么也没有也应当调用save方法。</p>
+<blockquote>
+<p>每次设置配置项都会自动调用save方法，因此你可以不用显示调用</p>
+</blockquote>
+</li>
+<li><p><code>generator.config.set(key,val)</code></p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="string">"Name"</span>: <span class="string">"用于存储的键"</span>,</div><div class="line"><span class="string">"val"</span> : <span class="string">"任何JSON类型的值（String，Number, Array, Object）"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>generator.config.get()</code><br>根据键获得配置项</p>
+</li>
+<li><p><code>generator.config.getAll()</code><br>获取可用的所有配置信息；主要返回值不是按引用返回的，所以要更改里面的配置项还是需要调用set方法。</p>
+</li>
+<li><p><code>generator.config.delete()</code><br>删除某个键值（及其值）</p>
+</li>
+<li><p><code>generator.config.defaults()</code><br>将对象作为默认的配置信息，采用不覆盖原则</p>
+</li>
+</ol>
+<h3 id="6-2、-yo-rc-json-文件结构"><a href="#6-2、-yo-rc-json-文件结构" class="headerlink" title="6.2、.yo-rc.json 文件结构"></a>6.2、.yo-rc.json 文件结构</h3><p>该文件可存储多个生成器的信息，每个生成器依据名字划分命名空间防止冲突，这也意味着每个生成器的配置项只能被子生成器读取到，不同生成器间的配置信息不能通过 Yeoman Storage API.访问。（使用命令行参数或者选项在不同构造器间传递参数。</p>
+<p>文件样本：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"generator-backbone"</span>: &#123;</div><div class="line">    <span class="string">"requirejs"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="string">"coffee"</span>: <span class="literal">true</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"generator-gruntfile"</span>: &#123;</div><div class="line">    <span class="string">"compass"</span>: <span class="literal">false</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ol>
+<li><a href="http://yeoman.io/authoring/" target="_blank" rel="external">WRITING YOUR OWN YEOMAN GENERATOR</a></li>
+<li><a href="http://www.html-js.com/article/1732" target="_blank" rel="external">学习Bower – 前端开发包管理工具</a><blockquote>
+<p>   原文的2个链接失效了，不放上来了</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="整理文档"><a href="#整理文档" class="headerlink" title="整理文档"></a>整理文档</h2><ol>
+<li><a href="http://www.jscon.co/coding/frontend/yeoman_generator.html" target="_blank" rel="external">自定义Yeoman生成器 —— JSCON-简时空</a></li>
+</ol>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/F2E/" rel="tag">#F2E</a>
+          
+            <a href="/tags/node/" rel="tag">#node</a>
+          
+            <a href="/tags/f2e/" rel="tag">#f2e</a>
+          
+            <a href="/tags/yeoman/" rel="tag">#yeoman</a>
+          
+            <a href="/tags/kmapp/" rel="tag">#kmapp</a>
+          
+            <a href="/tags/generator/" rel="tag">#generator</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/25/webuploader/" rel="next" title="webuploader">
+                <i class="fa fa-chevron-left"></i> webuploader
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/05/readList-1/" rel="prev" title="readList">
+                readList <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/04/03/自定义Yeoman生成器/"
+     data-title="自定义Yeoman生成器"
+     data-content=""
+     data-url="http://sumaolin.com/2016/04/03/自定义Yeoman生成器/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2016/04/03/自定义Yeoman生成器/"
+                   data-title="自定义Yeoman生成器" data-url="http://sumaolin.com/2016/04/03/自定义Yeoman生成器/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://tp4.sinaimg.cn/1765384767/180/5749265416/1" alt="Kevin Su" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Kevin Su</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">苏茂林, 个人博客, Kevin.Su's Blog, 关于前端技术的的杂记！</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="menu-item-icon icon-next-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Getting-Started"><span class="nav-number">1.</span> <span class="nav-text">1 Getting Started</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1、设置Node模块"><span class="nav-number">1.1.</span> <span class="nav-text">1.1、设置Node模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2、文件树结构"><span class="nav-number">1.2.</span> <span class="nav-text">1.2、文件树结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3、继承generator"><span class="nav-number">1.3.</span> <span class="nav-text">1.3、继承generator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4、重写构造函数"><span class="nav-number">1.4.</span> <span class="nav-text">1.4、重写构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5、添加方法"><span class="nav-number">1.5.</span> <span class="nav-text">1.5、添加方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6、运行生成器"><span class="nav-number">1.6.</span> <span class="nav-text">1.6、运行生成器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7、找到工程根目录"><span class="nav-number">1.7.</span> <span class="nav-text">1.7、找到工程根目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、运行上下文"><span class="nav-number">2.</span> <span class="nav-text">2、运行上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1、静态方法都是Action"><span class="nav-number">2.1.</span> <span class="nav-text">2.1、静态方法都是Action</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2、运行顺序"><span class="nav-number">2.2.</span> <span class="nav-text">2.2、运行顺序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、UI"><span class="nav-number">3.</span> <span class="nav-text">3、UI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1、提示框"><span class="nav-number">3.1.</span> <span class="nav-text">3.1、提示框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2、记住用户偏好"><span class="nav-number">3.2.</span> <span class="nav-text">3.2、记住用户偏好</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3、命令行参数"><span class="nav-number">3.3.</span> <span class="nav-text">3.3、命令行参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4、选项"><span class="nav-number">3.4.</span> <span class="nav-text">3.4、选项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、处理依赖"><span class="nav-number">4.</span> <span class="nav-text">4、处理依赖</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1、npm"><span class="nav-number">4.1.</span> <span class="nav-text">4.1、npm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2、bower"><span class="nav-number">4.2.</span> <span class="nav-text">4.2、bower</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、文件系统"><span class="nav-number">5.</span> <span class="nav-text">5、文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1、destination-contex-目标位置上下文"><span class="nav-number">5.1.</span> <span class="nav-text">5.1、destination contex 目标位置上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2、template-context-模板位置上下文"><span class="nav-number">5.2.</span> <span class="nav-text">5.2、template context 模板位置上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3、文件操作API"><span class="nav-number">5.3.</span> <span class="nav-text">5.3、文件操作API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、储存用户设置"><span class="nav-number">6.</span> <span class="nav-text">6、储存用户设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1、常用方法"><span class="nav-number">6.1.</span> <span class="nav-text">6.1、常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2、-yo-rc-json-文件结构"><span class="nav-number">6.2.</span> <span class="nav-text">6.2、.yo-rc.json 文件结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文档"><span class="nav-number">7.</span> <span class="nav-text">参考文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#整理文档"><span class="nav-number">8.</span> <span class="nav-text">整理文档</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kevin Su</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sumaolin"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.2" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+
+      motionIntegrator.bootstrap();
+    });
+  </script>
+
+  
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>

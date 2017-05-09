@@ -1,0 +1,887 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="baidu-site-verification" content="aH9Bnk1gKE" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<!-- start Mixpanel -->
+<script type="text/javascript">
+(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"http://datalink.kmsocial.cn/mixpanel.min.js".match(/^\/\//)?"https:http://datalink.kmsocial.cn/mixpanel.min.js":"http://datalink.kmsocial.cn/mixpanel.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+mixpanel.init("8cad7aab113488a3d7e96b939f5b5add");
+</script>
+<!-- end Mixpanel -->
+
+    <script type="text/javascript">
+    mixpanel.register({
+        'uid': 'lilihuan@kmsocial.com',
+        'srcuid': 'lihuixi@kmsocial.com',
+        'platform': 'weixin',
+        'urlid': '苏茂林博客 详情页'
+    });
+    </script>
+  
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+<link rel="stylesheet" type="text/css" href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" />
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.2"/>
+
+
+    <meta name="description" content="苏茂林, 个人博客, Kevin.Su's Blog, 关于前端技术的的杂记！" />
+
+
+
+  <meta name="keywords" content="Nodejs,koa," />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="苏茂林" type="application/atom+xml" />
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/./favicon.ico?v=0.4.5.2" />
+
+
+<meta name="description" content="想学习下后端的Node or Koa 相关的知识，目标能实现开发，从一个个网上的例子的一行行代码开始敲起！">
+<meta name="keywords" content="Nodejs,koa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="koa begainer">
+<meta property="og:url" content="http://sumaolin.com/2016/05/10/koa-begainer/index.html">
+<meta property="og:site_name" content="苏茂林">
+<meta property="og:description" content="想学习下后端的Node or Koa 相关的知识，目标能实现开发，从一个个网上的例子的一行行代码开始敲起！">
+<meta property="og:updated_time" content="2017-05-09T23:11:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="koa begainer">
+<meta name="twitter:description" content="想学习下后端的Node or Koa 相关的知识，目标能实现开发，从一个个网上的例子的一行行代码开始敲起！">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+
+
+  <title> koa begainer | 苏茂林 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-52231954-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?154101e86ea67b8b420e04051c6e0b2a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">苏茂林</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Kevin.Su's Blog</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                koa begainer
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-05-10T18:48:41+08:00" content="2016-05-10">
+              2016-05-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Nodejs/" itemprop="url" rel="index">
+                    <span itemprop="name">Nodejs</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/10/koa-begainer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/10/koa-begainer/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>想学习下后端的Node or Koa 相关的知识，目标能实现开发，从一个个网上的例子的一行行代码开始敲起！</p>
+<a id="more"></a>
+<h1 id="kick-off-koa"><a href="#kick-off-koa" class="headerlink" title="kick-off-koa"></a><a href="https://github.com/koajs/kick-off-koa" target="_blank" rel="external">kick-off-koa</a></h1><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>  总共11 个 exercise 想每天做一个呢，结果一下午 complete all。总结：</p>
+<ol>
+<li>简单的英文提示，基本能看懂大概意思，按提示的点能够独立完成。很简单的入门课程！</li>
+<li><p>对于异步理解很不到位，最后一个exercise: authentication 一直报错：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">should be redirected to <span class="string">'/'</span></div></pre></td></tr></table></figure>
+<p>先’this.redirect=”/“‘ 改为 ‘this.redirct(“/“)’，还是一直报错，最后实在没办法，看了下github 中的解决办法，<br>才发现’var body = parse(this)’ 写错了，应该是’var body = yield parse(this)’ 少了yield。现在对于异步的理解还很浅显，感觉是body 调用的时候数据还没parse完。</p>
+</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="http://www.jscon.cc/koa-action-1/" target="_blank" rel="external">[Koa系列-1]简单入门</a></li>
+<li><p><a href="http://www.jscon.cc/koa-action-2/" target="_blank" rel="external">[koa系列-2]路由</a></p>
+<blockquote>
+<p>在kick-off-koa基础上，深入的讲解了下, 其中讲到了两张代码模式：</p>
+<ol>
+<li>Express-style，用法来自于express框架，它能够开启app.get, app.put, app.post, app.delete等功能</li>
+<li>Middleware-style,此时将 实例化 一个 koa-route 对象，在这个对象中配置路由规则，然后作为一个中间件塞入到app.use方法中。</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<h1 id="基于-koa-开发论坛系统"><a href="#基于-koa-开发论坛系统" class="headerlink" title="基于 koa 开发论坛系统"></a><a href="http://cnodejs.org/topic/563f6e708e90ab7c391e9f71" target="_blank" rel="external">基于 koa 开发论坛系统</a></h1><h2 id="2016-05-05"><a href="#2016-05-05" class="headerlink" title="2016-05-05"></a>2016-05-05</h2><ol>
+<li><a href="http://nswbmw.github.io/N-club/1/1.3.html" target="_blank" rel="external">co 和 koa</a> 中理解不了thunk函数</li>
+</ol>
+<h2 id="2016-05-09"><a href="#2016-05-09" class="headerlink" title="2016-05-09"></a>2016-05-09</h2><ol>
+<li><p><a href="https://nswbmw.github.io/N-club/2/2.1.html" target="_blank" rel="external">模版系统</a></p>
+<p>主要是 <a href="https://github.com/nswbmw/co-ejs" target="_blank" rel="external">co-ejs</a> 的各种报错问题，都提交到 <a href="https://github.com/nswbmw/co-ejs/issues/2" target="_blank" rel="external">wiki</a> 中，最后通过 项目中的 demo 中的文件找到的 解决方法！</p>
+<p>看了下 <a href="https://github.com/nswbmw/co-ejs#settings" target="_blank" rel="external">co-ejs setting</a>, 有点被自己蠢哭了，答案都在这里啊！</p>
+<blockquote>
+<p>root: view root directory.<br> layout: global layout file, default is layout, set false to disable layout.<br> viewExt: view file extension (default html).<br> cache: cache compiled templates (default true).<br> debug: debug flag (default false).<br> locals: global locals, can be function type, this in the function is koa’s ctx.<br> filters: ejs custom filters.<br> open: open sequence (default &lt;%).<br> close: close sequence (default %&gt;).</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="2016-05-10"><a href="#2016-05-10" class="headerlink" title="2016-05-10"></a>2016-05-10</h2><ol>
+<li><p><a href="http://nswbmw.github.io/N-club/3/README.html" target="_blank" rel="external">路由</a></p>
+<p>window下安装koa-frouter一直报错，看到 <a href="https://github.com/nswbmw/koa-frouter" target="_blank" rel="external">koa-frouter</a> 官网的issus 有这个问题，原因是:<code>出现这个问题是因为windows的文件命名不能带有通配符*</code> 所以 @作者修改了该问题发布了 koa-frouter@0.3.3版本修复这个安装时候的问题</p>
+<p>相关 issuse<a href="https://github.com/nswbmw/koa-frouter/issues/4" target="_blank" rel="external">npm i koa-frouter –save 报错</a></p>
+<p>话说koa-frouter, co-ejs 都是这个教程的作者写的啊！</p>
+</li>
+</ol>
+<h2 id="2016-05-11"><a href="#2016-05-11" class="headerlink" title="2016-05-11"></a>2016-05-11</h2><h3 id="参数验证与错误处理"><a href="#参数验证与错误处理" class="headerlink" title="参数验证与错误处理"></a><a href="http://nswbmw.github.io/N-club/4/4.1.html" target="_blank" rel="external">参数验证与错误处理</a></h3><p>  <a href="https://github.com/nswbmw/koa-scheme" target="_blank" rel="external">koa-scheme</a> 用于输入输出（this.request, this.response) 数据格式的校验，代码编写后要写测试用例，先看后面的</p>
+<p>  <a href="https://github.com/nswbmw/koa-errorhandler" target="_blank" rel="external">koa-errorhandler</a></p>
+<h3 id="缓存和配置"><a href="#缓存和配置" class="headerlink" title="缓存和配置"></a><a href="http://nswbmw.github.io/N-club/5/5.1.html" target="_blank" rel="external">缓存和配置</a></h3><p>  <a href="https://github.com/nswbmw/koa-router-cache" target="_blank" rel="external">koa-router-cache</a> 匹配路径 请求的cache，业务逻辑层之前的缓存</p>
+<p>  <a href="https://github.com/nswbmw/co-cache" target="_blank" rel="external">co-cache</a> 业务逻辑之后，数据层之前，把写经常用的查询数据，缓存起来！ 需要用到mongodb ，后面测试</p>
+<p>  <a href="https://github.com/nswbmw/config-lite" target="_blank" rel="external">config-lite</a> 配置文件的区分调用plugin</p>
+<h2 id="2016-05-12"><a href="#2016-05-12" class="headerlink" title="2016-05-12"></a>2016-05-12</h2><h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a><a href="http://nswbmw.github.io/N-club/6/README.html" target="_blank" rel="external">测试</a></h3><p>  主要用到的npm <a href="https://github.com/blakeembrey/co-mocha" target="_blank" rel="external">co-mocha</a> 与 <a href="https://github.com/avbel/co-supertest" target="_blank" rel="external">co-supertest</a></p>
+<p>  describe // 一直写错了，</p>
+<p>  参考了 <a href="http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html" target="_blank" rel="external">测试框架 Mocha 实例教程</a> 和 <a href="https://cnodejs.org/topic/516526766d38277306c7d277" target="_blank" rel="external">初识 mocha in NodeJS</a> </p>
+<p>  <a href="http://www.cnblogs.com/wade-xu/p/4673460.html" target="_blank" rel="external">带你入门带你飞Ⅱ 使用Mocha + Chai + SuperTest测试Restful API in node.js</a></p>
+<blockquote>
+<p>.send(obj) post 的请求的时候，发送请求参数</p>
+</blockquote>
+<p>  Anything you can do with superagent, you can do with supertest - for example multipart file uploads!<br>  测试上传图片的请求<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">request(app)</div><div class="line">.post(<span class="string">'/'</span>)</div><div class="line">.field(<span class="string">'name'</span>, <span class="string">'my awesome avatar'</span>)</div><div class="line">.attach(<span class="string">'avatar'</span>, <span class="string">'test/fixtures/homeboy.jpg'</span>)</div><div class="line">...</div></pre></td></tr></table></figure></p>
+<h2 id="2016-05-13"><a href="#2016-05-13" class="headerlink" title="2016-05-13"></a>2016-05-13</h2><p>  继续测试<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">it(<span class="string">'post /signup'</span>, <span class="function"><span class="keyword">function</span> *(<span class="params">done</span>) </span>&#123;</div><div class="line">  <span class="keyword">yield</span> agent.post(<span class="string">'/signup'</span>)</div><div class="line">  .send(param)</div><div class="line">  .end(<span class="function"><span class="keyword">function</span>(<span class="params">err, res</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> done(err);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 报错信息，感觉是因为 生成器函数中，不能使用 done 参数</span></div><div class="line"><span class="built_in">Error</span>: timeout <span class="keyword">of</span> <span class="number">2000</span>ms exceeded. Ensure the done() callback is being call</div><div class="line">ed <span class="keyword">in</span> <span class="keyword">this</span> test.</div></pre></td></tr></table></figure></p>
+<h2 id="2016-05-16"><a href="#2016-05-16" class="headerlink" title="2016-05-16"></a>2016-05-16</h2><p>  经过前面的铺垫，开始根据第七章构建一个完整的论坛demo</p>
+<p>  做完7.5 可以开始初步的调试</p>
+<h2 id="2016-05-17"><a href="#2016-05-17" class="headerlink" title="2016-05-17"></a>2016-05-17</h2><h3 id="安装mongodb"><a href="#安装mongodb" class="headerlink" title="安装mongodb"></a>安装mongodb</h3><ol>
+<li><p><a href="http://www.cnblogs.com/linjiqin/p/3192159.html" target="_blank" rel="external">Windows7下安装MongoDB</a> </p>
+<p>吃了路径没有写对的亏，一直启动不成功，以后要注意</p>
+</li>
+</ol>
+<h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><ol>
+<li>node app.js 报错:<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">bbs@1.0.0 start f:\Users\dev\bbs</div><div class="line">node app.js</div><div class="line"></div><div class="line">f:\Users\dev\bbs\node_modules\mongoose\lib\schema.js:556</div><div class="line">    throw new TypeError(<span class="string">'Undefined type `'</span> + name + <span class="string">'` at `'</span> + path +</div><div class="line">    ^</div><div class="line"></div><div class="line">TypeError: Undefined <span class="built_in">type</span> `C` at `0`</div><div class="line">  Did you try nesting Schemas? You can only nest using refs or arrays.</div><div class="line">    at Function.Schema.interpretAsType (f:\Users\dev\bbs\node_modules\mongoose\l</div><div class="line">ib\schema.js:556:11)</div><div class="line">    at Schema.path (f:\Users\dev\bbs\node_modules\mongoose\lib\schema.js:464:29)</div><div class="line"></div><div class="line">    at Schema.add (f:\Users\dev\bbs\node_modules\mongoose\lib\schema.js:348:12)</div><div class="line">    at new Schema (f:\Users\dev\bbs\node_modules\mongoose\lib\schema.js:94:10)</div><div class="line">    at Schema (f:\Users\dev\bbs\node_modules\mongoose\lib\schema.js:67:12)</div><div class="line">    at Object.&lt;anonymous&gt; (f:\Users\dev\bbs\models\comment.js:18:18)</div><div class="line">    at Module._compile (module.js:409:26)</div><div class="line">    at Object.Module._extensions..js (module.js:416:10)</div><div class="line">    at Module.load (module.js:343:32)</div><div class="line">    at Function.Module._load (module.js:300:12)</div><div class="line">    at Module.require (module.js:353:17)</div><div class="line">    at require (internal/module.js:12:17)</div><div class="line">    at Object.&lt;anonymous&gt; (f:\Users\dev\bbs\models\index.js:13:19)</div><div class="line">    at Module._compile (module.js:409:26)</div><div class="line">    at Object.Module._extensions..js (module.js:416:10)</div><div class="line">    at Module.load (module.js:343:32)</div><div class="line"></div><div class="line">npm ERR! Windows_NT 6.1.7601</div><div class="line">npm ERR! argv <span class="string">"C:\\Program Files\\nodejs\\node.exe"</span> <span class="string">"C:\\Users\\KevinSu\\AppData</span></div><div class="line">\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" <span class="string">"start"</span></div><div class="line">npm ERR! node v4.4.3</div><div class="line">npm ERR! npm  v3.8.7</div><div class="line">npm ERR! code ELIFECYCLE</div><div class="line">npm ERR! bbs@1.0.0 start: `node app.js`</div><div class="line">npm ERR! Exit status 1</div><div class="line">npm ERR!</div><div class="line">npm ERR! Failed at the bbs@1.0.0 start script <span class="string">'node app.js'</span>.</div><div class="line">npm ERR! Make sure you have the latest version of node.js and npm installed.</div><div class="line">npm ERR! If you <span class="keyword">do</span>, this is most likely a problem with the bbs package,</div><div class="line">npm ERR! not with npm itself.</div><div class="line">npm ERR! Tell the author that this fails on your system:</div><div class="line">npm ERR!     node app.js</div><div class="line">npm ERR! You can get information on how to open an issue <span class="keyword">for</span> this project with:</div><div class="line">npm ERR!     npm bugs bbs</div><div class="line">npm ERR! Or <span class="keyword">if</span> that isn<span class="string">'t available, you can get their info via:</span></div><div class="line">npm ERR!     npm owner ls bbs</div><div class="line">npm ERR! There is likely additional logging output above.</div><div class="line"></div><div class="line">npm ERR! Please include the following file with any support request:</div><div class="line">npm ERR!     f:\Users\dev\bbs\npm-debug.log</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>  重点错误信息：<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">TypeError: Undefined <span class="built_in">type</span> `C` at `0`</div><div class="line">    Did you try nesting Schemas? You can only nest using refs or arrays.</div><div class="line">      at Function.Schema.interpretAsType (f:\Users\dev\bbs\node_modules\mongoose\l</div><div class="line">  ib\schema.js:556:11)</div></pre></td></tr></table></figure></p>
+<p>  和 <code>at Object.&lt;anonymous&gt; (f:\Users\dev\bbs\models\comment.js:18:18)</code>  定位代码错误的位置</p>
+<p>  百度 错误 得到的是 <a href="http://stackoverflow.com/questions/27259449/mongoose-error-nesting-schemas" target="_blank" rel="external">Mongoose error: nesting Schemas</a> 没看懂，感觉是mongodb 的使用出问题了，直接去 <a href="https://github.com/Automattic/mongoose/issues" target="_blank" rel="external">mongoose 官网issuse</a></p>
+<p>  发现错误 <code>module.exports = Schema(&#39;Comment&#39;, CommontSchema);</code> 写错了，应该是<code>module.exports = mongoose.model(&#39;Comment&#39;, CommontSchema);</code></p>
+<h2 id="2016-05-18"><a href="#2016-05-18" class="headerlink" title="2016-05-18"></a>2016-05-18</h2><p>  继续昨天的调试</p>
+<ol>
+<li><p><a href="http://nswbmw.github.io/N-club/7/README.html" target="_blank" rel="external">7.1. 基础项目搭建</a> 中<code>default.js</code> 关于 routerCacheConf 的配置是以前旧版本的koa-router-cache的使用方法，运行会报错：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">  Error: `key` must be string or generatorFunction!</div><div class="line">    at module.exports (f:\Users\dev\bbs\node_modules\koa-router-cache\lib\index.</div><div class="line">js:13:13)</div><div class="line">    at Object.&lt;anonymous&gt; (f:\Users\dev\bbs\app.js:32:9)</div><div class="line">    at Module._compile (module.js:409:26)</div><div class="line">    at Object.Module._extensions..js (module.js:416:10)</div><div class="line">    at Module.load (module.js:343:32)</div><div class="line">    at Function.Module._load (module.js:300:12)</div><div class="line">    at Function.Module.runMain (module.js:441:10)</div><div class="line">    at startup (node.js:139:18)</div><div class="line">    at node.js:968:3</div></pre></td></tr></table></figure>
+<p>新的配置方法请参考 <a href="https://github.com/nswbmw/koa-router-cache" target="_blank" rel="external">koa-router-cache</a></p>
+</li>
+<li><p>然后就可以启动了 简单的<code>node app.js</code> 看到没报错启动成功了，可以直接 <code>http://localhost:3000</code>页面报错，cli里面不报错，想了半天原因，后面才想去没有index.html 页面，只有signup页面，直接访问 <code>http://localhost:3000/signup</code>就OK了！</p>
+<p>7.5章节就OK啦！继续下一节了！</p>
+</li>
+</ol>
+<h2 id="2016-05-19"><a href="#2016-05-19" class="headerlink" title="2016-05-19"></a>2016-05-19</h2><p>  7.8 章节点code 了，next code  7.9 章节</p>
+<h2 id="2016-05-20"><a href="#2016-05-20" class="headerlink" title="2016-05-20"></a>2016-05-20</h2><p>  昨天调试了几个bug，都是代码单词拼写错误或者分号缺少造成的语法错误，<code>node app.js</code>已经可以运行，但是首页打不开，今天继续调试！</p>
+<p>  感觉进步啊，不知道为啥，路由的不起作用，</p>
+<p>  next:</p>
+<pre><code>1. vscode debug 功能学习下
+2. router/topic/_id 不进入
+</code></pre><h2 id="2016-05-23"><a href="#2016-05-23" class="headerlink" title="2016-05-23"></a>2016-05-23</h2><p>  /index 不响应，后台不报错， 浏览器无响应，不知道从何入手啊!</p>
+<p>  翻了下 <a href="https://github.com/nswbmw/N-club/issues" target="_blank" rel="external">N-club issuse</a>, 感觉是自己没起redis 服务，在 <a href="https://github.com/nswbmw/N-club/issues/5#issuecomment-206723697" target="_blank" rel="external">co-cache这个模块用到了redis</a> 中作者明确说 <code>需要同时开启mongoDB和redis的</code>, 参考 <a href="http://blog.csdn.net/renfufei/article/details/38474435" target="_blank" rel="external">Windows下安装并设置Redis</a> 安装开启redis 服务</p>
+<h2 id="2016-05-27"><a href="#2016-05-27" class="headerlink" title="2016-05-27"></a>2016-05-27</h2><ol>
+<li><p><a href="http://keenwon.com/1275.html" target="_blank" rel="external">在windows上部署使用Redis</a> 设置redis 为系统服务</p>
+</li>
+<li><p>debug 到 <code>userCard.ejs</code> 中 <code>&lt;% var userInfo = yield $User.getUserByName(name) %&gt;</code> 这行出错了！，再具体的不知道bug 的原因</p>
+</li>
+</ol>
+<h2 id="2016-05-30"><a href="#2016-05-30" class="headerlink" title="2016-05-30"></a>2016-05-30</h2><h3 id="bug-解决办法"><a href="#bug-解决办法" class="headerlink" title="bug 解决办法"></a>bug 解决办法</h3><ol>
+<li><p>学习 vscode debug koa 的方法，看下是否可以定位到具体的bug</p>
+<p>参考: <a href="https://cnodejs.org/topic/572209ea35af8a704195f552" target="_blank" rel="external">【视频教程】使用vscode调试koa2-example</a></p>
+</li>
+<li><p>学习下一章写测试 test , 关于 ‘$User.getUserByName(name)’ 的测试，看是否能找出bug</p>
+</li>
+</ol>
+<h3 id="post-signin-bug"><a href="#post-signin-bug" class="headerlink" title="post /signin  bug"></a>post /signin  bug</h3><p>  先开始发现mongodb 中存入的密码是明文，然后登陆的时候是 比对的 是md5的值，发现注册的时候，schema中 md5(password) 的值没有赋值给body, 而是赋值给了this，所以body 中的还是明文的密码</p>
+<p>  然后登陆 post /signin  是报错了！</p>
+<p>  错误提示<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">koa-generic-session <span class="built_in">set</span> error: Cannot <span class="built_in">read</span> property <span class="string">'maxAge'</span> of undefined</div><div class="line">  at MongoStore.set$ (f:\Users\dev\bbs\node_modules\koa-generic-session-mongo\dist\store.js:195:33)</div><div class="line">  at tryCatch (f:\Users\dev\bbs\node_modules\babel-runtime\regenerator\runtime.js:72:40)</div><div class="line">  at GeneratorFunctionPrototype.invoke [as _invoke] (f:\Users\dev\bbs\node_modules\babel-runtime\regenerator\runtime.js:334:22)</div><div class="line">  at GeneratorFunctionPrototype.prototype.(anonymous <span class="keyword">function</span>) [as next] (f:\Users\dev\bbs\node_modules\babel-runtime\regenerator\runtime.js:105:21)</div><div class="line">  at onFulfilled (f:\Users\dev\bbs\node_modules\co\index.js:65:19)</div><div class="line">  at f:\Users\dev\bbs\node_modules\co\index.js:54:5</div><div class="line">  at Object.co (f:\Users\dev\bbs\node_modules\co\index.js:50:10)</div><div class="line">  at Object.toPromise (f:\Users\dev\bbs\node_modules\co\index.js:118:63)</div><div class="line">  at next (f:\Users\dev\bbs\node_modules\co\index.js:99:29)</div><div class="line">  at onFulfilled (f:\Users\dev\bbs\node_modules\co\index.js:69:7)</div><div class="line">  at f:\Users\dev\bbs\node_modules\co\index.js:54:5</div><div class="line">  at Object.co (f:\Users\dev\bbs\node_modules\co\index.js:50:10)</div><div class="line">  at Object.toPromise (f:\Users\dev\bbs\node_modules\co\index.js:118:63)</div><div class="line">  at next (f:\Users\dev\bbs\node_modules\co\index.js:99:29)</div><div class="line">  at onFulfilled (f:\Users\dev\bbs\node_modules\co\index.js:69:7)</div><div class="line">  at f:\Users\dev\bbs\node_modules\co\index.js:54:5</div></pre></td></tr></table></figure></p>
+<h2 id="2016-06-01"><a href="#2016-06-01" class="headerlink" title="2016-06-01"></a>2016-06-01</h2><h3 id="bugList"><a href="#bugList" class="headerlink" title="bugList"></a>bugList</h3><ol>
+<li><p><a href="#signin-post-bug">koa-generic-session set error: Cannot read property ‘maxAge’ of undefined</a></p>
+</li>
+<li><p>detail topic/:id</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">NotFoundError: Not Found</div><div class="line">    at Object.module.exports.throw (f:\Users\dev\bbs\node_modules\koa\lib\context.js:91:23)</div><div class="line">    at Object.error (f:\Users\dev\bbs\node_modules\koa-errorhandler\index.js:70:73)</div><div class="line">    at next (native)</div><div class="line">    at Object.&lt;anonymous&gt; (f:\Users\dev\bbs\node_modules\koa-compose\index.js:28:19)</div><div class="line">    at next (native)</div><div class="line">    at onFulfilled (f:\Users\dev\bbs\node_modules\co\index.js:65:19)</div><div class="line">    at process._tickCallback (node.js:369:9)</div></pre></td></tr></table></figure>
+<p><strong> fix </strong> : koa-frouter 在Windows中的配置问题</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">routerConf: &#123;</div><div class="line">  <span class="attr">root</span>: <span class="string">'./routes'</span>,</div><div class="line">  <span class="attr">wildcard</span>: <span class="string">'_'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="2016-06-02"><a href="#2016-06-02" class="headerlink" title="2016-06-02"></a>2016-06-02</h2><h3 id="继续-post-signup-时候的-bug"><a href="#继续-post-signup-时候的-bug" class="headerlink" title="继续 post /signup 时候的 bug"></a>继续 <code>post /signup</code> 时候的 <a href="#post-signin-bug">bug</a></h3><p>暂时解决办法：app.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">app.use(session(&#123;</div><div class="line">  <span class="attr">store</span>: <span class="keyword">new</span> MongoStore(config.mongodb),</div><div class="line">  <span class="attr">beforeSave</span>: <span class="function"><span class="keyword">function</span>(<span class="params">ctx, sess</span>)</span>&#123;</div><div class="line">    ctx.session.cookie = sess.cookie = &#123;</div><div class="line">      <span class="attr">httpOnly</span>: <span class="literal">true</span>,</div><div class="line">      <span class="attr">path</span>: <span class="string">'/'</span>,</div><div class="line">      <span class="attr">overwrite</span>: <span class="literal">true</span>,</div><div class="line">      <span class="attr">signed</span>: <span class="literal">true</span>,</div><div class="line">      <span class="attr">maxAge</span>: &amp; * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span> <span class="comment">//one day in ms</span></div><div class="line">    &#125;;</div><div class="line">  &#125;</div><div class="line">&#125;));</div></pre></td></tr></table></figure></p>
+<p>通过<code>koa-generic-session</code> 中的method <code>beforeSave</code> 直接添加cookie 的相关设置</p>
+<h2 id="2016-06-03"><a href="#2016-06-03" class="headerlink" title="2016-06-03"></a>2016-06-03</h2><h3 id="1-post-create-bug"><a href="#1-post-create-bug" class="headerlink" title="1. post /create bug:"></a>1. post /create bug:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">ValidationError: Topic validation failed</div><div class="line">    at MongooseError.ValidationError (f:\Users\dev\bbs\node_modules\mongoose\lib\error\validation.js:22:11)</div><div class="line">    at model.Document.invalidate (f:\Users\dev\bbs\node_modules\mongoose\lib\document.js:1366:32)</div><div class="line">    at f:\Users\dev\bbs\node_modules\mongoose\lib\document.js:1242:17</div><div class="line">    at validate (f:\Users\dev\bbs\node_modules\mongoose\lib\schematype.js:702:7)</div><div class="line">    at f:\Users\dev\bbs\node_modules\mongoose\lib\schematype.js:733:9</div><div class="line">    at Array.forEach (native)</div><div class="line">    at SchemaString.SchemaType.doValidate (f:\Users\dev\bbs\node_modules\mongoose\lib\schematype.js:707:19)</div><div class="line">    at f:\Users\dev\bbs\node_modules\mongoose\lib\document.js:1240:9</div><div class="line">    at nextTickCallbackWith0Args (node.js:420:9)</div><div class="line">    at process._tickCallback (node.js:349:13)</div></pre></td></tr></table></figure>
+<p>fixed ： post/signin 时候的 session 中添加user 属性 topic schema 定义的user 是对象！ 代码敲错了！</p>
+<p>整个代码可以跑起来了，下面 写 test</p>
+<h3 id="测试-test"><a href="#测试-test" class="headerlink" title="测试 test"></a>测试 test</h3><p>  <code>npm i mocha co-mocha supertest co-supertest --save-dev</code> 依赖的模块</p>
+<p>  test/signup.js 测试注册功能！</p>
+<h3 id="Next-Doing"><a href="#Next-Doing" class="headerlink" title="Next Doing"></a>Next Doing</h3><p>  test/signin.js 登录功能<br>  test/create.js 发帖功能<br>  test/comment.js 回帖功能</p>
+<p>  部署到coding 演示平台上</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><h2 id="系列教程"><a href="#系列教程" class="headerlink" title="系列教程"></a>系列教程</h2><ol>
+<li><p><a href="https://github.com/koajs/kick-off-koa" target="_blank" rel="external">kick-off-koa</a> 【已完成】</p>
+<blockquote>
+<p>npm 安装，cli 交互模式学习。应该深入学习 <a href="http://nodeschool.io/zh-cn/" target="_blank" rel="external">NodeSchool</a> 下各个课程。</p>
+</blockquote>
+</li>
+</ol>
+<ol>
+<li><p><a href="http://cnodejs.org/topic/563f6e708e90ab7c391e9f71" target="_blank" rel="external">基于 koa 开发论坛系统</a> 【进行……】</p>
+</li>
+<li><p><a href="https://github.com/nswbmw/N-blog" target="_blank" rel="external">使用 Express + MongoDB 搭建多人博客</a></p>
+</li>
+<li><p><a href="http://www.nodebeginner.org/index-zh-cn.html" target="_blank" rel="external">Node入门</a></p>
+</li>
+<li><p><a href="http://www.kancloud.cn/kancloud/create-voting-app/63977" target="_blank" rel="external">使用React、Node.js、MongoDB、Socket.IO开发一个角色投票应用</a> <a href="https://github.com/papersnake/newdenfaces-es6" target="_blank" rel="external">github</a></p>
+</li>
+<li><p><a href="https://scotch.io/tutorials/build-a-react-flux-app-with-user-authentication" target="_blank" rel="external">Build a React + Flux App with User Authentication</a></p>
+</li>
+<li><p><a href="https://github.com/mulgore/kodo" target="_blank" rel="external">和我一起实战react</a> 【未完成】</p>
+</li>
+<li><p><a href="https://github.com/zoubin/streamify-your-node-program" target="_blank" rel="external">对Node.js中 stream模块的学习积累和理解</a></p>
+</li>
+</ol>
+<h2 id="入门系列"><a href="#入门系列" class="headerlink" title="入门系列"></a>入门系列</h2><ol>
+<li><a href="https://github.com/guo-yu/koa-guide" target="_blank" rel="external">koa 中文文档</a></li>
+<li><a href="https://github.com/koajs/koa/wiki" target="_blank" rel="external">koa 中间件</a></li>
+<li><a href="http://17koa.com/koa-generator-examples/" target="_blank" rel="external">一起学koa</a></li>
+<li><a href="https://cnodejs.org/topic/56936889c2289f51658f0926" target="_blank" rel="external">koa技术分享</a></li>
+</ol>
+<h2 id="解读系列"><a href="#解读系列" class="headerlink" title="解读系列"></a>解读系列</h2><ol>
+<li><a href="https://github.com/berwin/Blog/issues/8" target="_blank" rel="external">koa</a></li>
+<li><a href="http://taobaofed.org/blog/2016/03/18/error-handling-in-koa/" target="_blank" rel="external">如何优雅的在 koa 中处理错误</a></li>
+<li><a href="https://github.com/zoubin/streamify-your-node-program" target="_blank" rel="external">对Node.js中 stream模块的学习积累和理解</a></li>
+<li><a href="link">stream-handbook</a></li>
+</ol>
+<h2 id="NPM库"><a href="#NPM库" class="headerlink" title="NPM库"></a>NPM库</h2><ol>
+<li><a href="http://doxmate.cool/node-webot/wechat/index.html" target="_blank" rel="external">微信公共平台Node库wechat</a></li>
+</ol>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Nodejs/" rel="tag">#Nodejs</a>
+          
+            <a href="/tags/koa/" rel="tag">#koa</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/06/readList/" rel="next" title="readList">
+                <i class="fa fa-chevron-left"></i> readList
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/02/readList-2016-06-01/" rel="prev" title="readList 2016.06.01">
+                readList 2016.06.01 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/05/10/koa-begainer/"
+     data-title="koa begainer"
+     data-content=""
+     data-url="http://sumaolin.com/2016/05/10/koa-begainer/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2016/05/10/koa-begainer/"
+                   data-title="koa begainer" data-url="http://sumaolin.com/2016/05/10/koa-begainer/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="http://tp4.sinaimg.cn/1765384767/180/5749265416/1" alt="Kevin Su" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Kevin Su</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">苏茂林, 个人博客, Kevin.Su's Blog, 关于前端技术的的杂记！</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="menu-item-icon icon-next-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#kick-off-koa"><span class="nav-number">1.</span> <span class="nav-text">kick-off-koa</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.1.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.2.</span> <span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基于-koa-开发论坛系统"><span class="nav-number">2.</span> <span class="nav-text">基于 koa 开发论坛系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-05-05"><span class="nav-number">2.1.</span> <span class="nav-text">2016-05-05</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-05-09"><span class="nav-number">2.2.</span> <span class="nav-text">2016-05-09</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-05-10"><span class="nav-number">2.3.</span> <span class="nav-text">2016-05-10</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-05-11"><span class="nav-number">2.4.</span> <span class="nav-text">2016-05-11</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参数验证与错误处理"><span class="nav-number">2.4.1.</span> <span class="nav-text">参数验证与错误处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存和配置"><span class="nav-number">2.4.2.</span> <span class="nav-text">缓存和配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-05-12"><span class="nav-number">2.5.</span> <span class="nav-text">2016-05-12</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试"><span class="nav-number">2.5.1.</span> <span class="nav-text">测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-05-13"><span class="nav-number">2.6.</span> <span class="nav-text">2016-05-13</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-05-16"><span class="nav-number">2.7.</span> <span class="nav-text">2016-05-16</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-05-17"><span class="nav-number">2.8.</span> <span class="nav-text">2016-05-17</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装mongodb"><span class="nav-number">2.8.1.</span> <span class="nav-text">安装mongodb</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调试"><span class="nav-number">2.8.2.</span> <span class="nav-text">调试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-05-18"><span class="nav-number">2.9.</span> <span class="nav-text">2016-05-18</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-05-19"><span class="nav-number">2.10.</span> <span class="nav-text">2016-05-19</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-05-20"><span class="nav-number">2.11.</span> <span class="nav-text">2016-05-20</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-05-23"><span class="nav-number">2.12.</span> <span class="nav-text">2016-05-23</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-05-27"><span class="nav-number">2.13.</span> <span class="nav-text">2016-05-27</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-05-30"><span class="nav-number">2.14.</span> <span class="nav-text">2016-05-30</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bug-解决办法"><span class="nav-number">2.14.1.</span> <span class="nav-text">bug 解决办法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#post-signin-bug"><span class="nav-number">2.14.2.</span> <span class="nav-text">post /signin  bug</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-06-01"><span class="nav-number">2.15.</span> <span class="nav-text">2016-06-01</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bugList"><span class="nav-number">2.15.1.</span> <span class="nav-text">bugList</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-06-02"><span class="nav-number">2.16.</span> <span class="nav-text">2016-06-02</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继续-post-signup-时候的-bug"><span class="nav-number">2.16.1.</span> <span class="nav-text">继续 post /signup 时候的 bug</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-06-03"><span class="nav-number">2.17.</span> <span class="nav-text">2016-06-03</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-post-create-bug"><span class="nav-number">2.17.1.</span> <span class="nav-text">1. post /create bug:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试-test"><span class="nav-number">2.17.2.</span> <span class="nav-text">测试 test</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Next-Doing"><span class="nav-number">2.17.3.</span> <span class="nav-text">Next Doing</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">3.</span> <span class="nav-text">参考链接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系列教程"><span class="nav-number">3.1.</span> <span class="nav-text">系列教程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入门系列"><span class="nav-number">3.2.</span> <span class="nav-text">入门系列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解读系列"><span class="nav-number">3.3.</span> <span class="nav-text">解读系列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NPM库"><span class="nav-number">3.4.</span> <span class="nav-text">NPM库</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kevin Su</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sumaolin"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.2" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+
+      motionIntegrator.bootstrap();
+    });
+  </script>
+
+  
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
