@@ -1241,7 +1241,7 @@ Error pulling image (2.8.19) from redis, Untar re-exec error: exit status 1: out
     <link href="http://sumaolin.com/2016/02/17/hello-hexo/"/>
     <id>http://sumaolin.com/2016/02/17/hello-hexo/</id>
     <published>2016-02-17T10:03:20.000Z</published>
-    <updated>2017-05-09T23:31:13.000Z</updated>
+    <updated>2017-05-12T15:54:40.000Z</updated>
     
     <content type="html"><![CDATA[<p>一直想弄个自己的博客 记录下自己的技术方面的点点滴滴（更好的装B)</p>
 <p>新年第一天上班，正好看到hexo 可以借助github.com 构建自己的静态博客，正好可以折腾下！</p>
@@ -1359,7 +1359,7 @@ Error pulling image (2.8.19) from redis, Untar re-exec error: exit status 1: out
 <p>基本的安装、配置在插件主页也有过说明，按照配置即可，这里记录下遇到的坑。注意在_config.yml 中不要配置插件栏如下，否则会报错找不到 hexo server 的命令，可参考问题: <a href="https://github.com/gyk001/hexo-qiniu-sync/issues/41" target="_blank" rel="external">https://github.com/gyk001/hexo-qiniu-sync/issues/41</a></p>
 </blockquote>
 <p>原来官方已经解决了，按照提示注释掉 插件就可以了，再来个测试OK</p>
-<img title="恩比德" alt="恩比德" src="/static/img/143610200.jpg">
+<img title="恩比德" alt="恩比德" src="http://sumaolin.reekly.com/static/img/143666350.jpg">
 <h4 id="发现刚才测试的-考辛斯的图片并没有同步到七牛-，并且-deploy-后连接还是原来的域名下的"><a href="#发现刚才测试的-考辛斯的图片并没有同步到七牛-，并且-deploy-后连接还是原来的域名下的" class="headerlink" title="发现刚才测试的 考辛斯的图片并没有同步到七牛 ，并且 deploy 后连接还是原来的域名下的"></a>发现刚才测试的 考辛斯的图片并没有同步到七牛 ，并且 deploy 后连接还是原来的域名下的</h4>]]></content>
     
     <summary type="html">
