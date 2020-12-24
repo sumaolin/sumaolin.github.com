@@ -41,7 +41,7 @@
 
 
 
-  <meta name="keywords" content="docker," />
+  <meta name="keywords" content="Typescript,CheatSheet,beginer," />
 
 
 
@@ -52,16 +52,16 @@
   <link rel="shortcut icon" type="image/x-icon" href="/./favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="docker 入门使用">
+<meta name="description" content="想学 Typescript 好久啦，一直没行动，从看过的文章写个 cheatSheet 开始吧，以后用到的时候好快速复习！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker入门">
-<meta property="og:url" content="http://sumaolin.com/2016/04/25/docker入门/index.html">
+<meta property="og:title" content="Typescript cheatSheet">
+<meta property="og:url" content="http://sumaolin.com/2018/12/31/Typescript-cheatSheet/index.html">
 <meta property="og:site_name" content="苏茂林">
-<meta property="og:description" content="docker 入门使用">
-<meta property="og:updated_time" content="2017-05-09T23:11:06.000Z">
+<meta property="og:description" content="想学 Typescript 好久啦，一直没行动，从看过的文章写个 cheatSheet 开始吧，以后用到的时候好快速复习！">
+<meta property="og:updated_time" content="2019-08-27T22:35:21.893Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="docker入门">
-<meta name="twitter:description" content="docker 入门使用">
+<meta name="twitter:title" content="Typescript cheatSheet">
+<meta name="twitter:description" content="想学 Typescript 好久啦，一直没行动，从看过的文章写个 cheatSheet 开始吧，以后用到的时候好快速复习！">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -73,7 +73,7 @@
 
 
 
-  <title> docker入门 | 苏茂林 </title>
+  <title> Typescript cheatSheet | 苏茂林 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -208,7 +208,7 @@
             
             
               
-                docker入门
+                Typescript cheatSheet
               
             
           </h1>
@@ -217,8 +217,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-04-25T21:07:46+08:00" content="2016-04-25">
-              2016-04-25
+            <time itemprop="dateCreated" datetime="2018-12-31T17:34:14+08:00" content="2018-12-31">
+              2018-12-31
             </time>
           </span>
 
@@ -227,8 +227,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/docker/" itemprop="url" rel="index">
-                    <span itemprop="name">docker</span>
+                  <a href="/categories/F2E/" itemprop="url" rel="index">
+                    <span itemprop="name">F2E</span>
                   </a>
                 </span>
 
@@ -256,41 +256,9 @@
       
 
       
-        <span itemprop="articleBody"><p>docker 入门使用<br><a id="more"></a></p>
-<h1 id="入门资料"><a href="#入门资料" class="headerlink" title="入门资料"></a>入门资料</h1><h2 id="遇到问题"><a href="#遇到问题" class="headerlink" title="遇到问题"></a>遇到问题</h2><ol>
-<li><p><code>Error starting daemon: open /var/run/docker.pid: permission denie</code></p>
-<blockquote>
-<p>运行任何docker 相关的命令都提示： <code>FATA[0000] Cannot connect to the Docker daemon. Is &#39;docker -d&#39; running on this host?</code> ，按提示输入<code>docker -d&#39;后不 提示</code>Error starting daemon: open /var/run/docker.pid: permission denie`。</p>
-</blockquote>
-<p><strong> 解决办法 </strong></p>
-<p><code>boot2docker stop &amp; boot2docker start</code> 重新进入后恢复正常，</p>
-</li>
-<li><p><code>docker pull redis:2.8.19</code> 是一直报错：</p>
-<blockquote>
-<p><code>8c37ff647cf2: Error pulling image (2.8.19) from redis, Untar re-exec error: exit status 1: output: unexpected EOF
-Error pulling image (2.8.19) from redis, Untar re-exec error: exit status 1: output: unexpected EOF</code></p>
-</blockquote>
-</li>
-</ol>
-<h2 id="2016-04-27-16-58"><a href="#2016-04-27-16-58" class="headerlink" title="2016-04-27 16:58"></a>2016-04-27 16:58</h2><p>昨天系统莫名其妙的升级到Windows10 回退到Windows 7 后又各种问题，直接重置了一天系统，今天总算能用了（白白浪费一天时间）</p>
-<p>由于重装系统的缘故，docker也升级到了 1.9 直接使用Docker Toolbox， 使用上和boot2docker 是有差别的的，通过docker terminal快捷进入，就可以直接docker images 查看了，操作了</p>
-<p><strong> 疑问 </strong> <code>docker-machine ssh default</code> 是做什么的？管理主机？</p>
-<ol>
-<li><p>docker 参数 -d</p>
-<blockquote>
-<p>docker run指定的命令如果不是那些一直挂起的命令（比如运行top，不断echo），就是会自动退出的。-d命令是设置detach为true，根据官方的文档，意思是让这个命令在后台运行，但并不是一直运行（我们在一个正常的Linux Terminal中运行/bin/bash，运行完了也就完了，不会一直挂着等待响应的，所以确实没办法用daemon方式来跑/bin/bash）。</p>
-</blockquote>
-</li>
-<li><p>docker quick terminal 进入的是MINGW64 所以window 盘符转换 D: -&gt; /d</p>
-</li>
-<li><p><a href="https://dashboard.daocloud.io/mirror" target="_blank" rel="external">配置Docker加速器</a><br> 配置docker toolbox 的<code>--registry-mirror</code>，速度瞬间上去了</p>
-</li>
-</ol>
-<h2 id="2016-04-28-18-21"><a href="#2016-04-28-18-21" class="headerlink" title="2016-04-28 18:21"></a>2016-04-28 18:21</h2><ol>
-<li><a href="https://yeasy.gitbooks.io/docker_practice/content/index.html" target="_blank" rel="external">Docker —— 从入门到实践</a> 【电子书】</li>
-<li><a href="http://wiki.jikexueyuan.com/project/docker/" target="_blank" rel="external">Docker 中文教程</a></li>
-<li><a href="http://www.csdn.net/article/2015-07-21/2825268" target="_blank" rel="external">如何将nodeclub构建成Docker镜像</a></li>
-</ol>
+        <span itemprop="articleBody"><p>想学 Typescript 好久啦，一直没行动，从看过的文章写个 cheatSheet 开始吧，以后用到的时候好快速复习！</p>
+<a id="more"></a>
+<h3 id="接口-Interface"><a href="#接口-Interface" class="headerlink" title="接口 Interface"></a>接口 Interface</h3><p>作用</p>
 </span>
       
     </div>
@@ -299,7 +267,11 @@ Error pulling image (2.8.19) from redis, Untar re-exec error: exit status 1: out
       
         <div class="post-tags">
           
-            <a href="/tags/docker/" rel="tag">#docker</a>
+            <a href="/tags/Typescript/" rel="tag">#Typescript</a>
+          
+            <a href="/tags/CheatSheet/" rel="tag">#CheatSheet</a>
+          
+            <a href="/tags/beginer/" rel="tag">#beginer</a>
           
         </div>
       
@@ -308,17 +280,13 @@ Error pulling image (2.8.19) from redis, Untar re-exec error: exit status 1: out
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/06/移动端Web上传图片/" rel="next" title="移动端Web上传图片">
-                <i class="fa fa-chevron-left"></i> 移动端Web上传图片
+              <a href="/2017/01/10/小程序/" rel="next" title="'小程序'">
+                <i class="fa fa-chevron-left"></i> '小程序'
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/28/three-js-beginer/" rel="prev" title="three.js beginer">
-                three.js beginer <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -432,7 +400,7 @@ Error pulling image (2.8.19) from redis, Untar re-exec error: exit status 1: out
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#入门资料"><span class="nav-number">1.</span> <span class="nav-text">入门资料</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到问题"><span class="nav-number">1.1.</span> <span class="nav-text">遇到问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-04-27-16-58"><span class="nav-number">1.2.</span> <span class="nav-text">2016-04-27 16:58</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-04-28-18-21"><span class="nav-number">1.3.</span> <span class="nav-text">2016-04-28 18:21</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#接口-Interface"><span class="nav-number">1.</span> <span class="nav-text">接口 Interface</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
