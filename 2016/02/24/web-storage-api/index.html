@@ -1,294 +1,266 @@
-<!doctype html>
-<html class="theme-next use-motion theme-next-mist">
-<head>
-  
-
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="baidu-site-verification" content="aH9Bnk1gKE" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52231954-2"></script>
 <script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-0801833808148020",
-    enable_page_level_ads: true
-  });
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-52231954-2');
 </script>
+<!-- End Google Analytics -->
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+    
 
-
-
-
-
-
-
-
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?154101e86ea67b8b420e04051c6e0b2a"></script>
+<!-- End Baidu Tongji -->
 
 
 
-
-<link rel="stylesheet" type="text/css" href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" />
-
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.2"/>
-
-
-    <meta name="description" content="苏茂林, 个人博客, Kevin.Su's Blog, 关于前端技术的的杂记！" />
-
-
-
-  <meta name="keywords" content="F2E,sessionStorage,localStorage,web storage api," />
-
-
-
-  <link rel="alternate" href="/atom.xml" title="苏茂林" type="application/atom+xml" />
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/./favicon.ico?v=0.4.5.2" />
+<!-- Baidu Push -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- End Baidu Push -->
 
 
-<meta name="description" content="项目中想加入 webStorage 减小网络开销，提高加载速度，增强用户体验，想系统的看下 web storage方面的文章！">
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>web storage api | 苏茂林 | Kevin.Su&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="F2E,sessionStorage,localStorage,web storage api">
+    <meta name="description" content="项目中想加入 webStorage 减小网络开销，提高加载速度，增强用户体验，想系统的看下 web storage方面的文章！">
+<meta name="keywords" content="F2E,sessionStorage,localStorage,web storage api">
 <meta property="og:type" content="article">
 <meta property="og:title" content="web storage api">
 <meta property="og:url" content="http://sumaolin.com/2016/02/24/web-storage-api/index.html">
 <meta property="og:site_name" content="苏茂林">
 <meta property="og:description" content="项目中想加入 webStorage 减小网络开销，提高加载速度，增强用户体验，想系统的看下 web storage方面的文章！">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-12-31T09:58:22.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web storage api">
 <meta name="twitter:description" content="项目中想加入 webStorage 减小网络开销，提高加载速度，增强用户体验，想系统的看下 web storage方面的文章！">
+    
+        <link rel="alternate" type="application/atom+xml" title="苏茂林" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <link href="/css/prism/prism-tomorrow-night.css" rel="stylesheet">
+    <script>window.lazyScripts=[]</script>
 
+    <!-- custom head --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
 
-<script type="text/javascript" id="hexo.configuration">
-  var CONFIG = {
-    scheme: 'Mist',
-    sidebar: 'post'
-  };
-</script>
-
-
-
-  <title> web storage api | 苏茂林 </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
 
-
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-list-ul"></i>
     </a>
+    <div class="brand-wrap" style="background-image:url(/img/back_blue.png)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Kevin Su</h5>
+          <a href="mailto:sumaolin@gmail.com" title="sumaolin@gmail.com" class="mail">sumaolin@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives/"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories/"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags/"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/sumaolin"  >
+                <i class="icon icon-lg icon-github"></i>
+                代码
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about/"  >
+                <i class="icon icon-lg icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+      </ul>
+    </div>
   </div>
-<![endif]-->
-  
+</aside>
 
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-52231954-2', 'auto');
-  ga('send', 'pageview');
-</script>
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?154101e86ea67b8b420e04051c6e0b2a";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-  <div class="container one-column page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
-
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">苏茂林</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-  <p class="site-subtitle">Kevin.Su's Blog</p>
-</div>
-
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu ">
-      
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">web storage api</div>
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-
-      
-      
-    </ul>
-  
-
-  
-</nav>
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div id="content" class="content"> 
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                web storage api
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2016-02-24T10:14:24+08:00" content="2016-02-24">
-              2016-02-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/F2E/" itemprop="url" rel="index">
-                    <span itemprop="name">F2E</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
         </div>
-      </header>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">web storage api</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-02-24T02:14:24.000Z" itemprop="datePublished" class="page-time">
+  2016-02-24
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/F2E/">F2E</a></li></ul>
+
+            
+        </h5>
+    </div>
+
     
 
 
-    <div class="post-body">
+</header>
 
-      
-      
 
-      
-        <span itemprop="articleBody"><p>项目中想加入 webStorage 减小网络开销，提高加载速度，增强用户体验，想系统的看下 web storage方面的文章！<br><a id="more"></a></p>
-<h2 id="Web-Storage-API"><a href="#Web-Storage-API" class="headerlink" title="Web Storage API"></a>Web Storage API</h2><h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p>早上在几个前端同事的桌子上翻到的 <a href="http://book.douban.com/subject/5402708/" target="_blank" rel="external">HTML5高级程序设计</a> 相关的基础知识看第9章补充的。然后搜索下网络知识：</p>
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Web-Storage-API"><span class="post-toc-text">Web Storage API</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#参考文章"><span class="post-toc-text">参考文章</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实践"><span class="post-toc-text">实践</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Next"><span class="post-toc-text">Next</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#20160401-更新"><span class="post-toc-text">20160401 更新</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#关于-application-manifest"><span class="post-toc-text">关于 application manifest</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2016-04-18"><span class="post-toc-text">2016-04-18</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#疑问"><span class="post-toc-text">疑问</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-application-cache-数据量的大小？"><span class="post-toc-text">1. application cache 数据量的大小？</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-想缓存的文件太多了，手写很麻烦，怎么办呢？"><span class="post-toc-text">2. 想缓存的文件太多了，手写很麻烦，怎么办呢？</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-js控制-缓存文件的更新"><span class="post-toc-text">3. js控制 缓存文件的更新</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-注意事项"><span class="post-toc-text">4. 注意事项</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#阅读列表-2015-02-22-2015-02-28"><span class="post-toc-text">阅读列表 [2015.02.22 - 2015.02.28]</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-npm构建工具"><span class="post-toc-text">1. npm构建工具</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-WebRTC"><span class="post-toc-text">2. WebRTC</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-web-storage-api"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">web storage api</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-02-24 10:14:24" datetime="2016-02-24T02:14:24.000Z"  itemprop="datePublished">2016-02-24</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/F2E/">F2E</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>项目中想加入 webStorage 减小网络开销，提高加载速度，增强用户体验，想系统的看下 web storage方面的文章！<br><a id="more"></a></p>
+<h2 id="Web-Storage-API"><a href="#Web-Storage-API" class="headerlink" title="Web Storage API"></a>Web Storage API</h2><h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p>早上在几个前端同事的桌子上翻到的 <a href="http://book.douban.com/subject/5402708/" target="_blank" rel="noopener">HTML5高级程序设计</a> 相关的基础知识看第9章补充的。然后搜索下网络知识：</p>
 <ol>
-<li><p><a href="http://www.zhangxinxu.com/wordpress/2011/09/html5-localstorage%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8%E4%B8%BE%E4%BE%8B/" target="_blank" rel="external">HTML5 localStorage本地存储实际应用举例</a></p>
+<li><p><a href="http://www.zhangxinxu.com/wordpress/2011/09/html5-localstorage%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8%E4%B8%BE%E4%BE%8B/" target="_blank" rel="noopener">HTML5 localStorage本地存储实际应用举例</a></p>
 </li>
-<li><p><a href="http://adamed.iteye.com/blog/1698740" target="_blank" rel="external">localStorage、sessionStorage用法总结</a></p>
+<li><p><a href="http://adamed.iteye.com/blog/1698740" target="_blank" rel="noopener">localStorage、sessionStorage用法总结</a></p>
 <blockquote>
 <p>不同浏览器无法共享localStorage或sessionStorage中的信息。相同浏览器的不同页面间可以共享相同的localStorage（页面属于相同域名和端口），但是不同页面或标签页间无法共享sessionStorage的信息。这里需要注意的是，页面及标签页仅指顶级窗口，如果一个标签页包含多个iframe标签且他们属于同源页面，那么他们之间是可以共享sessionStorage的。</p>
 </blockquote>
 </li>
-<li><p><a href="https://imququ.com/post/summary-of-my-blog-optimization.html" target="_blank" rel="external">本博客零散优化点汇总</a></p>
+<li><p><a href="https://imququ.com/post/summary-of-my-blog-optimization.html" target="_blank" rel="noopener">本博客零散优化点汇总</a></p>
 </li>
-<li><p><a href="https://imququ.com/post/enhance-security-for-ls-code.html" target="_blank" rel="external">使用 SRI 增强 localStorage 代码安全</a></p>
+<li><p><a href="https://imququ.com/post/enhance-security-for-ls-code.html" target="_blank" rel="noopener">使用 SRI 增强 localStorage 代码安全</a></p>
 </li>
-<li><p><a href="http://blog.csdn.net/a497785609/article/details/48321405" target="_blank" rel="external">Web移动端使用localStorage缓存Js和css文件</a>   <em>
+<li><p><a href="http://blog.csdn.net/a497785609/article/details/48321405" target="_blank" rel="noopener">Web移动端使用localStorage缓存Js和css文件</a>   <em>
 </em><br>推荐 <em>
 </em></p>
 </li>
 </ol>
 <ol>
-<li><p><a href="http://www.w3ctech.com/topic/284" target="_blank" rel="external">基于 postMessage 和 localStorage 的跨域本地存储方案</a></p>
+<li><p><a href="http://www.w3ctech.com/topic/284" target="_blank" rel="noopener">基于 postMessage 和 localStorage 的跨域本地存储方案</a></p>
 </li>
-<li><p><a href="http://www.w3ctech.com/topic/767" target="_blank" rel="external">【译】在本地存储中保存图片和文件</a>   <em>
+<li><p><a href="http://www.w3ctech.com/topic/767" target="_blank" rel="noopener">【译】在本地存储中保存图片和文件</a>   <em>
 </em><br>推荐 <em>
 </em></p>
 </li>
 </ol>
 <ol>
-<li><p><a href="http://www.w3ctech.com/topic/284" target="_blank" rel="external">基于 postMessage 和 localStorage 的跨域本地存储方案</a></p>
+<li><p><a href="http://www.w3ctech.com/topic/284" target="_blank" rel="noopener">基于 postMessage 和 localStorage 的跨域本地存储方案</a></p>
 </li>
-<li><p><a href="https://hacks.mozilla.org/2012/02/storing-images-and-files-in-indexeddb/" target="_blank" rel="external">Storing images and files in IndexedDB</a></p>
+<li><p><a href="https://hacks.mozilla.org/2012/02/storing-images-and-files-in-indexeddb/" target="_blank" rel="noopener">Storing images and files in IndexedDB</a></p>
 </li>
-<li><p><a href="https://hacks.mozilla.org/2012/02/saving-images-and-files-in-localstorage/" target="_blank" rel="external">Saving images and files in localStorage</a></p>
+<li><p><a href="https://hacks.mozilla.org/2012/02/saving-images-and-files-in-localstorage/" target="_blank" rel="noopener">Saving images and files in localStorage</a></p>
 </li>
 </ol>
 <h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><p>  参考 上面的文章 5 对 所有的js 和 css 进行localStorage 缓存，每个缓存文件的链接可以通过v=new Date().getTime() 进行细化的版本控制，需要更新的添加 参数，不需要的不更新</p>
@@ -296,34 +268,34 @@
 <li>localStorage 本地存储 的require(‘js’) 模式的调用</li>
 </ol>
 <h5 id="20160401-更新"><a href="#20160401-更新" class="headerlink" title="20160401 更新"></a>20160401 更新</h5><ol>
-<li><a href="http://www.famanoder.com/bokes/56fd271ad20b0ffc34ae5983" target="_blank" rel="external">“高三”笔记之动态JS、动态样式</a></li>
+<li><a href="http://www.famanoder.com/bokes/56fd271ad20b0ffc34ae5983" target="_blank" rel="noopener">“高三”笔记之动态JS、动态样式</a></li>
 </ol>
 <h2 id="关于-application-manifest"><a href="#关于-application-manifest" class="headerlink" title="关于 application manifest"></a>关于 application manifest</h2><ol>
-<li><p><a href="http://www.cnblogs.com/_franky/archive/2012/11/23/2783947.html" target="_blank" rel="external">manifest 和 application cache</a></p>
+<li><p><a href="http://www.cnblogs.com/_franky/archive/2012/11/23/2783947.html" target="_blank" rel="noopener">manifest 和 application cache</a></p>
 </li>
-<li><p><a href="http://www.jnecw.com/p/490" target="_blank" rel="external">HTML5 离线存储实战之manifest（附缓存整个文件夹的方法）</a></p>
+<li><p><a href="http://www.jnecw.com/p/490" target="_blank" rel="noopener">HTML5 离线存储实战之manifest（附缓存整个文件夹的方法）</a></p>
 </li>
-<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Using_the_application_cache" target="_blank" rel="external">MDN 使用应用缓存</a> 够详尽！</p>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Using_the_application_cache" target="_blank" rel="noopener">MDN 使用应用缓存</a> 够详尽！</p>
 </li>
 </ol>
 <h5 id="2016-04-18"><a href="#2016-04-18" class="headerlink" title="2016-04-18"></a>2016-04-18</h5><ol>
-<li><p><a href="http://js8.in/2015/12/06/%E6%89%8B%E6%9C%BA%E7%99%BE%E5%BA%A6localstorage%E7%BB%86%E7%B2%92%E5%BA%A6%E7%BC%93%E5%AD%98%E4%BB%8B%E7%BB%8D/" target="_blank" rel="external">手机百度localstorage细粒度缓存介绍</a></p>
+<li><p><a href="http://js8.in/2015/12/06/%E6%89%8B%E6%9C%BA%E7%99%BE%E5%BA%A6localstorage%E7%BB%86%E7%B2%92%E5%BA%A6%E7%BC%93%E5%AD%98%E4%BB%8B%E7%BB%8D/" target="_blank" rel="noopener">手机百度localstorage细粒度缓存介绍</a></p>
 </li>
-<li><p><a href="http://js8.in/2014/05/28/%E6%89%8B%E6%9C%BA%E7%99%BE%E5%BA%A6%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%B9%8B%E8%B7%AF/" target="_blank" rel="external">手机百度前端工程化之路</a></p>
+<li><p><a href="http://js8.in/2014/05/28/%E6%89%8B%E6%9C%BA%E7%99%BE%E5%BA%A6%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E4%B9%8B%E8%B7%AF/" target="_blank" rel="noopener">手机百度前端工程化之路</a></p>
 </li>
 </ol>
 <h3 id="疑问"><a href="#疑问" class="headerlink" title="疑问"></a>疑问</h3><h5 id="1-application-cache-数据量的大小？"><a href="#1-application-cache-数据量的大小？" class="headerlink" title="1. application cache 数据量的大小？"></a>1. application cache 数据量的大小？</h5><p>不像localStorage 多数资料给出明确的大小是 5M, 查询的资料中很少提及 application cache 的大小，目前找到的文章中形成了两张说法：</p>
 <ol>
-<li><p><a href="http://www.html5rocks.com/zh/tutorials/appcache/beginner/" target="_blank" rel="external">应用缓存初级使用指南</a></p>
+<li><p><a href="http://www.html5rocks.com/zh/tutorials/appcache/beginner/" target="_blank" rel="noopener">应用缓存初级使用指南</a></p>
 <blockquote>
 <p>网站的缓存数据量不得超过 5 MB。不过，如果您要编写的是针对 Chrome 网上应用店的应用，可使用 unlimitedStorage 取消该限制</p>
 </blockquote>
 </li>
-<li><p><a href="http://blog.csdn.net/spring21st/article/details/7222390" target="_blank" rel="external">[HTML5]Application Cache使用中需要注意的事项</a></p>
+<li><p><a href="http://blog.csdn.net/spring21st/article/details/7222390" target="_blank" rel="noopener">[HTML5]Application Cache使用中需要注意的事项</a></p>
 <blockquote>
 <p> Safari桌面浏览器(Mac以及 Windows)没有限制<br>   Mobile Safari限制为10MB<br>   Chrome限制为5MB<br>   Android浏览器对应用程序缓存大小没有限制<br>   Firefox桌面版有无限的应用程序缓存大小<br>   Opera的应用程序缓存大小可以由用户管理，但有一个默认大小50MB</p>
 </blockquote>
-<p>各种浏览器的的 数据量的大小是不一样的。查看 html5 <a href="https://www.w3.org/TR/2011/WD-html5-20110405/offline.html#disk-space" target="_blank" rel="external">Application cache API 官方的文件</a>，也是支持各个浏览器自己定义的 允许的disk space 大小，甚至允许用户管理。</p>
+<p>各种浏览器的的 数据量的大小是不一样的。查看 html5 <a href="https://www.w3.org/TR/2011/WD-html5-20110405/offline.html#disk-space" target="_blank" rel="noopener">Application cache API 官方的文件</a>，也是支持各个浏览器自己定义的 允许的disk space 大小，甚至允许用户管理。</p>
 <p><em>
 </em><br>最终的方案 ：通用的application cache disk space 限制在5M <em>
 </em></p>
@@ -331,13 +303,31 @@
 </ol>
 <p>  <em>
 </em><br> tip: <em>
-</em><br> <a href="chrome://appcache-internals/" target="_blank" rel="external">chrome://appcache-internals/</a> 可以查看chorme 中 application cache 的使用大小，亲自证实不止 5M</p>
+</em><br> <a href="chrome://appcache-internals/" target="_blank" rel="noopener">chrome://appcache-internals/</a> 可以查看chorme 中 application cache 的使用大小，亲自证实不止 5M</p>
 <h5 id="2-想缓存的文件太多了，手写很麻烦，怎么办呢？"><a href="#2-想缓存的文件太多了，手写很麻烦，怎么办呢？" class="headerlink" title="2. 想缓存的文件太多了，手写很麻烦，怎么办呢？"></a>2. 想缓存的文件太多了，手写很麻烦，怎么办呢？</h5><ol>
-<li><a href="http://www.jb51.net/html5/376884.html" target="_blank" rel="external">详解HTML5中的manifest缓存使用</a> 中使用 <a href="https://www.npmjs.com/package/grunt-manifest" target="_blank" rel="external">grunt-manifest</a>自动生成manifest文件。因为我的构建工具使用的是gulp 所以去npmjs 搜索了<a href="https://www.npmjs.com/package/gulp-manifest" target="_blank" rel="external">gulp-manifest</a>，感兴趣的看官方文档吧，很详尽！</li>
+<li><a href="http://www.jb51.net/html5/376884.html" target="_blank" rel="noopener">详解HTML5中的manifest缓存使用</a> 中使用 <a href="https://www.npmjs.com/package/grunt-manifest" target="_blank" rel="noopener">grunt-manifest</a>自动生成manifest文件。因为我的构建工具使用的是gulp 所以去npmjs 搜索了<a href="https://www.npmjs.com/package/gulp-manifest" target="_blank" rel="noopener">gulp-manifest</a>，感兴趣的看官方文档吧，很详尽！</li>
 </ol>
-<h4 id="3-js控制-缓存文件的更新"><a href="#3-js控制-缓存文件的更新" class="headerlink" title="3. js控制 缓存文件的更新"></a>3. js控制 缓存文件的更新</h4><p>  参考：<a href="http://www.html5rocks.com/zh/tutorials/appcache/beginner/" target="_blank" rel="external">应用缓存初级使用指南</a><br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Check if a new cache is available on page load.</span></div><div class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line"></div><div class="line">  <span class="built_in">window</span>.applicationCache.addEventListener(<span class="string">'updateready'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.applicationCache.status == <span class="built_in">window</span>.applicationCache.UPDATEREADY) &#123;</div><div class="line">      <span class="comment">// Browser downloaded a new app cache.</span></div><div class="line">      <span class="comment">// Swap it in and reload the page to get the new hotness.</span></div><div class="line">      <span class="built_in">window</span>.applicationCache.swapCache();</div><div class="line">      <span class="keyword">if</span> (confirm(<span class="string">'A new version of this site is available. Load it?'</span>)) &#123;</div><div class="line">        <span class="built_in">window</span>.location.reload();</div><div class="line">      &#125;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="comment">// Manifest didn't changed. Nothing new to server.</span></div><div class="line">    &#125;</div><div class="line">  &#125;, <span class="literal">false</span>);</div><div class="line"></div><div class="line">&#125;, <span class="literal">false</span>);</div></pre></td></tr></table></figure></p>
+<h4 id="3-js控制-缓存文件的更新"><a href="#3-js控制-缓存文件的更新" class="headerlink" title="3. js控制 缓存文件的更新"></a>3. js控制 缓存文件的更新</h4><p>  参考：<a href="http://www.html5rocks.com/zh/tutorials/appcache/beginner/" target="_blank" rel="noopener">应用缓存初级使用指南</a></p>
+<pre><code class="lang-Javascript">    // Check if a new cache is available on page load.
+    window.addEventListener(&#39;load&#39;, function(e) {
+
+      window.applicationCache.addEventListener(&#39;updateready&#39;, function(e) {
+        if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+          // Browser downloaded a new app cache.
+          // Swap it in and reload the page to get the new hotness.
+          window.applicationCache.swapCache();
+          if (confirm(&#39;A new version of this site is available. Load it?&#39;)) {
+            window.location.reload();
+          }
+        } else {
+          // Manifest didn&#39;t changed. Nothing new to server.
+        }
+      }, false);
+
+    }, false);
+</code></pre>
 <h5 id="4-注意事项"><a href="#4-注意事项" class="headerlink" title="4. 注意事项"></a>4. 注意事项</h5><ol>
-<li><p><a href="http://blog.csdn.net/fdipzone/article/details/12718945" target="_blank" rel="external"> HTML5 使用application cache 接口实现离线数据缓存</a></p>
+<li><p><a href="http://blog.csdn.net/fdipzone/article/details/12718945" target="_blank" rel="noopener"> HTML5 使用application cache 接口实现离线数据缓存</a></p>
 <blockquote>
 <ol>
 <li>站点离线存储的容量限制是5M</li>
@@ -354,7 +344,7 @@
 </ol>
 </blockquote>
 </li>
-<li><p><a href="http://www.cnblogs.com/_franky/archive/2012/11/23/2783947.html" target="_blank" rel="external">manifest 和 application cache</a></p>
+<li><p><a href="http://www.cnblogs.com/_franky/archive/2012/11/23/2783947.html" target="_blank" rel="noopener">manifest 和 application cache</a></p>
 <blockquote>
 <ol>
 <li><p>备用项如果发生命中,则也会被缓存.</p>
@@ -370,428 +360,344 @@
 </li>
 </ol>
 <h2 id="阅读列表-2015-02-22-2015-02-28"><a href="#阅读列表-2015-02-22-2015-02-28" class="headerlink" title="阅读列表 [2015.02.22 - 2015.02.28]"></a>阅读列表 [2015.02.22 - 2015.02.28]</h2><h4 id="1-npm构建工具"><a href="#1-npm构建工具" class="headerlink" title="1. npm构建工具"></a>1. npm构建工具</h4><ol>
-<li><a href="http://www.infoq.com/cn/news/2016/02/gulp-grunt-npm-scripts-part1" target="_blank" rel="external">我为何放弃Gulp与Grunt，转投npm scripts 上</a>,</li>
-<li><a href="http://www.infoq.com/cn/news/2016/02/gulp-grunt-npm-scripts-part2" target="_blank" rel="external">我为何放弃Gulp与Grunt，转投npm scripts 中</a>,</li>
-<li><p><a href="http://www.infoq.com/cn/news/2016/02/gulp-grunt-npm-scripts-part3" target="_blank" rel="external">我为何放弃Gulp与Grunt，转投npm scripts 下</a></p>
+<li><a href="http://www.infoq.com/cn/news/2016/02/gulp-grunt-npm-scripts-part1" target="_blank" rel="noopener">我为何放弃Gulp与Grunt，转投npm scripts 上</a>,</li>
+<li><a href="http://www.infoq.com/cn/news/2016/02/gulp-grunt-npm-scripts-part2" target="_blank" rel="noopener">我为何放弃Gulp与Grunt，转投npm scripts 中</a>,</li>
+<li><p><a href="http://www.infoq.com/cn/news/2016/02/gulp-grunt-npm-scripts-part3" target="_blank" rel="noopener">我为何放弃Gulp与Grunt，转投npm scripts 下</a></p>
 <blockquote>
 <p>使用的gulp 的项目构建工具，有时间可以试下直接npm 构建。webpack 中可以使用npm 管理js 包依赖管理</p>
 </blockquote>
-<p>微博上的相关讨论： <a href="http://weibo.com/1746173800/Dji2uysKB?type=comment#_rnd1456298199966" target="_blank" rel="external">入口</a></p>
+<p>微博上的相关讨论： <a href="http://weibo.com/1746173800/Dji2uysKB?type=comment#_rnd1456298199966" target="_blank" rel="noopener">入口</a></p>
 </li>
 </ol>
 <h4 id="2-WebRTC"><a href="#2-WebRTC" class="headerlink" title="2. WebRTC"></a>2. WebRTC</h4><ol>
-<li><a href="http://www.infoq.com/cn/articles/webrtc-implementation-ideas" target="_blank" rel="external">实现WebRTC的几个想法</a></li>
+<li><a href="http://www.infoq.com/cn/articles/webrtc-implementation-ideas" target="_blank" rel="noopener">实现WebRTC的几个想法</a></li>
 </ol>
-</span>
-      
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-12-31T09:58:22.342Z" itemprop="dateUpdated">2018-12-31 17:58:22</time>
+</span><br>
+
+
+        
+        文章发布地址：<a href="/2016/02/24/web-storage-api/" target="_blank" rel="external">http://sumaolin.com/2016/02/24/web-storage-api/</a>
+        
     </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/F2E/" rel="tag">#F2E</a>
-          
-            <a href="/tags/sessionStorage/" rel="tag">#sessionStorage</a>
-          
-            <a href="/tags/localStorage/" rel="tag">#localStorage</a>
-          
-            <a href="/tags/web-storage-api/" rel="tag">#web storage api</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/02/17/hexo-theme/" rel="next" title="After hello hexo">
-                <i class="fa fa-chevron-left"></i> After hello hexo
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/25/webuploader/" rel="prev" title="webuploader">
-                webuploader <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
+    
+    <footer>
+        <a href="http://sumaolin.com">
+            <img src="/img/avatar.jpeg" alt="Kevin Su">
+            Kevin Su
+        </a>
     </footer>
-  </article>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/F2E/">F2E</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/localStorage/">localStorage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sessionStorage/">sessionStorage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web-storage-api/">web storage api</a></li></ul>
 
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sumaolin.com/2016/02/24/web-storage-api/&title=《web storage api》 — 苏茂林&pic=http://sumaolin.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sumaolin.com/2016/02/24/web-storage-api/&title=《web storage api》 — 苏茂林&source=项目中想加入 webStorage 减小网络开销，提高加载速度，增强用户体验，想系统的看下 web storage方面的文章！" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sumaolin.com/2016/02/24/web-storage-api/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《web storage api》 — 苏茂林&url=http://sumaolin.com/2016/02/24/web-storage-api/&via=http://sumaolin.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sumaolin.com/2016/02/24/web-storage-api/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
  </div>
 
-        
 
-        
-          <div class="comments" id="comments">
-            
-          </div>
-        
-      </div>
 
-      
-        
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/03/25/webuploader/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">webuploader</h4>
+      </a>
     </div>
-  </div>
+  
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="http://tp4.sinaimg.cn/1765384767/180/5749265416/1" alt="Kevin Su" itemprop="image"/>
-          <p class="site-author-name" itemprop="name">Kevin Su</p>
-        </div>
-        <p class="site-description motion-element" itemprop="description">苏茂林, 个人博客, Kevin.Su's Blog, 关于前端技术的的杂记！</p>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">17</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
-
-          <div class="site-state-item site-state-categories">
-            
-              <span class="site-state-item-count">7</span>
-              <span class="site-state-item-name">分类</span>
-              
-          </div>
-
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">29</span>
-              <span class="site-state-item-name">标签</span>
-              </a>
-          </div>
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="menu-item-icon icon-next-feed"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-      </section>
-
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator"></div>
-          <div class="post-toc">
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-Storage-API"><span class="nav-number">1.</span> <span class="nav-text">Web Storage API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文章"><span class="nav-number">1.1.</span> <span class="nav-text">参考文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实践"><span class="nav-number">1.2.</span> <span class="nav-text">实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Next"><span class="nav-number">1.2.1.</span> <span class="nav-text">Next</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#20160401-更新"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">20160401 更新</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于-application-manifest"><span class="nav-number">2.</span> <span class="nav-text">关于 application manifest</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2016-04-18"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">2016-04-18</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#疑问"><span class="nav-number">2.1.</span> <span class="nav-text">疑问</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-application-cache-数据量的大小？"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">1. application cache 数据量的大小？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-想缓存的文件太多了，手写很麻烦，怎么办呢？"><span class="nav-number">2.1.0.2.</span> <span class="nav-text">2. 想缓存的文件太多了，手写很麻烦，怎么办呢？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-js控制-缓存文件的更新"><span class="nav-number">2.1.1.</span> <span class="nav-text">3. js控制 缓存文件的更新</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-注意事项"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">4. 注意事项</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阅读列表-2015-02-22-2015-02-28"><span class="nav-number">3.</span> <span class="nav-text">阅读列表 [2015.02.22 - 2015.02.28]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-npm构建工具"><span class="nav-number">3.0.1.</span> <span class="nav-text">1. npm构建工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-WebRTC"><span class="nav-number">3.0.2.</span> <span class="nav-text">2. WebRTC</span></a></li></ol></li></ol></li></ol></div>
-            
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
-        </section>
-      
-
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/02/17/hello-hexo/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">hello-hexo</h4>
+      </a>
     </div>
-  </aside>
+  
+</nav>
 
 
-      
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="comments" id="comments">
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+            var id = location.pathname
+            if (location.pathname.length > 50) {
+              id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+            }
+            const gitalk = new Gitalk({
+              clientID: '5ab6d961fa632da0dfa5',
+              clientSecret: '27a8bcd3e86af92a96b8ca00f4ffaa95c80b53de',
+              repo: 'sumaolin.github.com',
+              owner: 'sumaolin',
+              admin: ['sumaolin'],
+              id: id,      // Ensure uniqueness and length less than 50
+              title: document.title.split('|')[0],
+              distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+            gitalk.render('gitalk-container')
+        </script>
+    </section>
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        感谢支持！
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-item switch">切换</span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+            <p>
+                
+                    <span>
+                        <a href="/atom.xml" target="_blank" class="rss" title="rss">
+                            <i class="icon icon-lg icon-rss"></i>
+                        </a>
+                    </span>
+                    
+                        <span>
+                            博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a>
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>
+                Kevin Su &copy;
+                    
+                        2018 -
+                            
+                                2020
+            </span>
+            <span>
+                
+                        Power by
+                        <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+                        <a href="https://github.com/abelsu7/hexo-theme-indigo-plus" target="_blank">indigo plus</a>
+                        <p>Hosted by <a href="https://coding.net/pages" style="font-weight: bold">Coding Pages</a></p>
+            </span>
+        </p>
+    </div>
+</footer>
+
     </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner"> <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Kevin Su</span>
-</div>
-
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+<a href="javascript:;" id="gobottom" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-comments"></span></a>
 
 
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sumaolin.com/2016/02/24/web-storage-api/&title=《web storage api》 — 苏茂林&pic=http://sumaolin.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sumaolin.com/2016/02/24/web-storage-api/&title=《web storage api》 — 苏茂林&source=项目中想加入 webStorage 减小网络开销，提高加载速度，增强用户体验，想系统的看下 web storage方面的文章！" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sumaolin.com/2016/02/24/web-storage-api/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《web storage api》 — 苏茂林&url=http://sumaolin.com/2016/02/24/web-storage-api/&via=http://sumaolin.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sumaolin.com/2016/02/24/web-storage-api/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
  </div>
-    </footer>
-
-    <div class="back-to-top"></div>
-  </div>
-
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  
-  
-    
-    
-
-  
 
 
-  
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
-  
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.2" id="motion.global"></script>
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIUlEQVR42u3aS2rDQBAFQN//0g5ka6y8p5YCmqlZmWCPXQo0/Xu94vP+Pcd//3z9efJPve44GBgYj2W8D0/yZf/zl2+/DQMDYx9GEkyTd+b35CE4+kYMDAyMj/dcFUCTOzEwMDAmAbdI3UoqBgYGxrki9lxr7FyRfGMtjoGB8UBGOxj4z9c3zjcwMDAewniXpy10r000v/4qDAyMpRnHrbS2xd8OPvO1jOhhYWBgLM04V3bOh5TJTzzGY2Bg7MPIr5uHyOTR5CkmBgbGPowkTZyMJ68aLSTrGhgYGGsz2mbZBJAwknCMgYGxMyNP+9plr8lnMTAw9mQcX9GufF2VUNZpJQYGxvaMqwJxe2cSajEwMHZgXFWstueYmq99YGBg7MZo2/35F7fDgHyYWkw4MTAwHs44159r07481Tu+7SsJAwNjUUbe0pqXnZNE8I+HgoGBsTRjtCRaBuu26ZaXvhgYGDswJsOAdsErHyfUa68YGBiLMs4NI/OgnC9tJDdE/wcMDIxFGXkTbb6c0aaS0aPBwMBYmtGmaMmw85bGWT7CxMDAWI5x1TpXUoJOhqN/PCwMDIylGW0x2Y4b5zfniSYGBsbajHYlKy8v2wQxD9NFZw4DA2MhRlKU3g0YBX0MDAyMU8PL9qGcK6cxMDAw2qZYG5Qni2KjgIuBgfFARr420bbGJm39CICBgbEBoy0g8yFlvgR2LgSP5hsYGBjPYPwAsAMPLGX3dQ8AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
 
 
 
 
-  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+    <script src="//cdn.jsdelivr.net/npm/node-waves@0.7.6/src/js/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 0.4 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
 </script>
 
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
+<script src="/js/main.min.js?v=1.7.2"></script>
 
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
 
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
 
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    var $tocContent = $('.post-toc-content');
-    if (isDesktop() && CONFIG.sidebar === 'post') {
-      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-        displaySidebar();
-      }
-    }
-  });
-</script>
+<script src="/js/search.min.js?v=1.7.2" async></script>
 
 
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
-      if (isMobile()) {
-        FastClick.attach(document.body);
-      }
 
-      motionIntegrator.bootstrap();
-    });
-  </script>
 
-  
-  
 
-  
-  
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $("#posts").find('img').lazyload({
-        placeholder: "/images/loading.gif",
-        effect: "fadeIn"
-      });
-    });
-  </script>
+
+
+
+<script src="/js/prism.js"></script>
+<script src="/js/prism-vim.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

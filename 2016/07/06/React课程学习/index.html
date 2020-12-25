@@ -1,286 +1,300 @@
-<!doctype html>
-<html class="theme-next use-motion theme-next-mist">
-<head>
-  
-
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="baidu-site-verification" content="aH9Bnk1gKE" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-52231954-2"></script>
 <script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-0801833808148020",
-    enable_page_level_ads: true
-  });
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-52231954-2');
 </script>
+<!-- End Google Analytics -->
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+    
 
-
-
-
-
-
-
-
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?154101e86ea67b8b420e04051c6e0b2a"></script>
+<!-- End Baidu Tongji -->
 
 
 
-
-<link rel="stylesheet" type="text/css" href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" />
-
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.2"/>
-
-
-    <meta name="description" content="苏茂林, 个人博客, Kevin.Su's Blog, 关于前端技术的的杂记！" />
-
-
-
-  <meta name="keywords" content="F2E,React,Redux," />
-
-
-
-  <link rel="alternate" href="/atom.xml" title="苏茂林" type="application/atom+xml" />
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/./favicon.ico?v=0.4.5.2" />
+<!-- Baidu Push -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!-- End Baidu Push -->
 
 
-<meta name="description" content="上一篇是关于react 资料的搜集，内容太多，后面参照hackathon-blog 中给出的关于react的资料: React课程学习, 整个资料循序渐进，挺易懂的！关于学习过程中的问题单开一章">
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>React课程学习 | 苏茂林 | Kevin.Su&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="F2E,React,Redux">
+    <meta name="description" content="上一篇是关于react 资料的搜集，内容太多，后面参照hackathon-blog 中给出的关于react的资料: React课程学习, 整个资料循序渐进，挺易懂的！关于学习过程中的问题单开一章">
+<meta name="keywords" content="F2E,React,Redux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React课程学习">
 <meta property="og:url" content="http://sumaolin.com/2016/07/06/React课程学习/index.html">
 <meta property="og:site_name" content="苏茂林">
 <meta property="og:description" content="上一篇是关于react 资料的搜集，内容太多，后面参照hackathon-blog 中给出的关于react的资料: React课程学习, 整个资料循序渐进，挺易懂的！关于学习过程中的问题单开一章">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-05-09T23:11:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React课程学习">
 <meta name="twitter:description" content="上一篇是关于react 资料的搜集，内容太多，后面参照hackathon-blog 中给出的关于react的资料: React课程学习, 整个资料循序渐进，挺易懂的！关于学习过程中的问题单开一章">
+    
+        <link rel="alternate" type="application/atom+xml" title="苏茂林" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <link href="/css/prism/prism-tomorrow-night.css" rel="stylesheet">
+    <script>window.lazyScripts=[]</script>
 
+    <!-- custom head --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
 
-<script type="text/javascript" id="hexo.configuration">
-  var CONFIG = {
-    scheme: 'Mist',
-    sidebar: 'post'
-  };
-</script>
-
-
-
-  <title> React课程学习 | 苏茂林 </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="loading" class="active"></div>
 
-
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-list-ul"></i>
     </a>
+    <div class="brand-wrap" style="background-image:url(/img/back_blue.png)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Kevin Su</h5>
+          <a href="mailto:sumaolin@gmail.com" title="sumaolin@gmail.com" class="mail">sumaolin@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives/"  >
+                <i class="icon icon-lg icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories/"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags/"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/sumaolin"  >
+                <i class="icon icon-lg icon-github"></i>
+                代码
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about/"  >
+                <i class="icon icon-lg icon-info-circle"></i>
+                关于
+              </a>
+            </li>
+        
+      </ul>
+    </div>
   </div>
-<![endif]-->
-  
+</aside>
 
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-52231954-2', 'auto');
-  ga('send', 'pageview');
-</script>
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?154101e86ea67b8b420e04051c6e0b2a";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-  <div class="container one-column page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
-
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">苏茂林</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-  <p class="site-subtitle">Kevin.Su's Blog</p>
-</div>
-
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu ">
-      
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">React课程学习</div>
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-
-      
-      
-    </ul>
-  
-
-  
-</nav>
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div id="content" class="content"> 
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                React课程学习
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2016-07-06T14:38:55+08:00" content="2016-07-06">
-              2016-07-06
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/F2E/" itemprop="url" rel="index">
-                    <span itemprop="name">F2E</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/F2E/React/" itemprop="url" rel="index">
-                    <span itemprop="name">React</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
         </div>
-      </header>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">React课程学习</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-07-06T06:38:55.000Z" itemprop="datePublished" class="page-time">
+  2016-07-06
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/F2E/">F2E</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/F2E/React/">React</a></li></ul></li></ul>
+
+            
+        </h5>
+    </div>
+
     
 
 
-    <div class="post-body">
+</header>
 
-      
-      
 
-      
-        <span itemprop="articleBody"><p><a href="/2016/06/06/hackathon-blog/">上一篇</a>是关于react 资料的搜集，内容太多，后面参照hackathon-blog 中给出的关于react的资料: <a href="http://guoyongfeng.github.io/idoc/index.html" target="_blank" rel="external">React课程学习</a>, 整个资料循序渐进，挺易懂的！关于学习过程中的问题单开一章<br><a id="more"></a></p>
-<h2 id="2016-06-29"><a href="#2016-06-29" class="headerlink" title="2016-06-29"></a>2016-06-29</h2><h3 id="1-Error"><a href="#1-Error" class="headerlink" title="1. Error:"></a>1. Error:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">Hash: 396f0bfb9d565b6f60f0</div><div class="line">Version: webpack 1.13.1</div><div class="line">Time: 52ms</div><div class="line">   [0] ./src/index.js 0 bytes [built] [failed]</div><div class="line"></div><div class="line">ERROR <span class="keyword">in</span> ./src/index.js</div><div class="line">Module parse failed: F:\Users\react\webpack-demo\src\index.js Unexpected token (9:6)</div><div class="line">You may need an appropriate loader to handle this file type.</div><div class="line">SyntaxError: Unexpected token (9:6)</div><div class="line">    at Parser.pp.raise (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:923:13)</div><div class="line">    at Parser.pp.unexpected (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:1490:8)</div><div class="line">    at Parser.pp.parseExprAtom (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:333:12)</div><div class="line">    at Parser.pp.parseExprSubscripts (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:228:19)</div><div class="line">    at Parser.pp.parseMaybeUnary (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:207:17)</div><div class="line">    at Parser.pp.parseExprOps (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:154:19)</div><div class="line">    at Parser.pp.parseMaybeConditional (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:136:19)</div><div class="line">    at Parser.pp.parseMaybeAssign (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:112:19)</div><div class="line">    at Parser.pp.parseParenAndDistinguishExpression (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:376:28)</div><div class="line">    at Parser.pp.parseExprAtom (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:307:19)</div><div class="line">    at Parser.pp.parseExprSubscripts (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:228:19)</div><div class="line">    at Parser.pp.parseMaybeUnary (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:207:17)</div><div class="line">    at Parser.pp.parseExprOps (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:154:19)</div><div class="line">    at Parser.pp.parseMaybeConditional (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:136:19)</div><div class="line">    at Parser.pp.parseMaybeAssign (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:112:19)</div><div class="line">    at Parser.pp.parseExpression (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:88:19)</div><div class="line">    at Parser.pp.parseReturnStatement (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:1872:26)</div><div class="line">    at Parser.pp.parseStatement (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:1737:19)</div><div class="line">    at Parser.pp.parseBlock (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:2009:21)</div><div class="line">    at Parser.pp.parseFunctionBody (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:610:22)</div><div class="line">    at Parser.pp.parseMethod (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:579:8)</div><div class="line">    at Parser.pp.parseClassMethod (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:2155:23)</div><div class="line">    at Parser.pp.parseClass (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:2140:10)</div><div class="line">    at Parser.pp.parseStatement (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:1733:19)</div><div class="line">    at Parser.pp.parseTopLevel (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:1666:21)</div><div class="line">    at Parser.parse (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:1632:17)</div><div class="line">    at Object.parse (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:885:44)</div><div class="line">    at Parser.parse (F:\Users\react\webpack-demo\node_modules\webpack\lib\Parser.js:902:15)</div><div class="line">    at DependenciesBlock.&lt;anonymous&gt; (F:\Users\react\webpack-demo\node_modules\webpack\lib\NormalModule.js:104:16)</div><div class="line">    at DependenciesBlock.onModuleBuild (F:\Users\react\webpack-demo\node_modules\webpack-core\lib\NormalModuleMixin.js:310:10)</div></pre></td></tr></table></figure>
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2016-06-29"><span class="post-toc-text">2016-06-29</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-Error"><span class="post-toc-text">1. Error:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#原因是，-loaders-中-test-匹配正则错误-没有引号，-js"><span class="post-toc-text">原因是， loaders 中 test 匹配正则错误, 没有引号，/\.js$/</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2016-06-30"><span class="post-toc-text">2016-06-30</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-webpack-加速！"><span class="post-toc-text">1. webpack 加速！</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-webpack-添加resolve-和-解析样式文件的-loaders-style-loader-css-loader-less-loader-，报错信息：Uncaught-ReferenceError-require-is-not-defined"><span class="post-toc-text">2. webpack 添加resolve 和 解析样式文件的 loaders: [style-loader, css-loader, less-loader] ，报错信息：Uncaught ReferenceError: require is not defined</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#提示"><span class="post-toc-text">提示</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-react-hot-amp-webpack-dev-server-—inline-—hot-配置热更新是报错！"><span class="post-toc-text">3. react-hot &amp; webpack-dev-server —inline —hot 配置热更新是报错！</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#解决办法"><span class="post-toc-text">解决办法</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2016-07-04"><span class="post-toc-text">2016-07-04</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-React-Router-使用教程"><span class="post-toc-text">1. React Router 使用教程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-React-Mixin-的前世今生"><span class="post-toc-text">2. React Mixin 的前世今生</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-github-notetaker应用开发"><span class="post-toc-text">3. github-notetaker应用开发</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-接入真实的数据"><span class="post-toc-text">7.接入真实的数据</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2016-07-05"><span class="post-toc-text">2016-07-05</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-github-note-taker-调试完成，属性了组织开发react的方式和-react-router的基本用法"><span class="post-toc-text">1. github-note-taker 调试完成，属性了组织开发react的方式和 react-router的基本用法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-React-router路由实践"><span class="post-toc-text">2. React-router路由实践</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-React-AJAX的最佳实践"><span class="post-toc-text">3. React-AJAX的最佳实践</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2016-07-06"><span class="post-toc-text">2016-07-06</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-coding-React-router路由实践"><span class="post-toc-text">1. coding React-router路由实践</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1"><span class="post-toc-text">1.</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2016-07-11"><span class="post-toc-text">2016-07-11</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2016-07-27"><span class="post-toc-text">2016-07-27</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2016-08-02"><span class="post-toc-text">2016-08-02</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2016-08-04"><span class="post-toc-text">2016-08-04</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-React课程学习"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">React课程学习</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016-07-06 14:38:55" datetime="2016-07-06T06:38:55.000Z"  itemprop="datePublished">2016-07-06</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/F2E/">F2E</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/F2E/React/">React</a></li></ul></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><a href="/2016/06/06/hackathon-blog/">上一篇</a>是关于react 资料的搜集，内容太多，后面参照hackathon-blog 中给出的关于react的资料: <a href="http://guoyongfeng.github.io/idoc/index.html" target="_blank" rel="noopener">React课程学习</a>, 整个资料循序渐进，挺易懂的！关于学习过程中的问题单开一章<br><a id="more"></a></p>
+<h2 id="2016-06-29"><a href="#2016-06-29" class="headerlink" title="2016-06-29"></a>2016-06-29</h2><h3 id="1-Error"><a href="#1-Error" class="headerlink" title="1. Error:"></a>1. Error:</h3><pre><code class="lang-bash">Hash: 396f0bfb9d565b6f60f0
+Version: webpack 1.13.1
+Time: 52ms
+   [0] ./src/index.js 0 bytes [built] [failed]
+
+ERROR in ./src/index.js
+Module parse failed: F:\Users\react\webpack-demo\src\index.js Unexpected token (9:6)
+You may need an appropriate loader to handle this file type.
+SyntaxError: Unexpected token (9:6)
+    at Parser.pp.raise (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:923:13)
+    at Parser.pp.unexpected (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:1490:8)
+    at Parser.pp.parseExprAtom (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:333:12)
+    at Parser.pp.parseExprSubscripts (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:228:19)
+    at Parser.pp.parseMaybeUnary (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:207:17)
+    at Parser.pp.parseExprOps (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:154:19)
+    at Parser.pp.parseMaybeConditional (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:136:19)
+    at Parser.pp.parseMaybeAssign (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:112:19)
+    at Parser.pp.parseParenAndDistinguishExpression (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:376:28)
+    at Parser.pp.parseExprAtom (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:307:19)
+    at Parser.pp.parseExprSubscripts (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:228:19)
+    at Parser.pp.parseMaybeUnary (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:207:17)
+    at Parser.pp.parseExprOps (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:154:19)
+    at Parser.pp.parseMaybeConditional (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:136:19)
+    at Parser.pp.parseMaybeAssign (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:112:19)
+    at Parser.pp.parseExpression (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:88:19)
+    at Parser.pp.parseReturnStatement (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:1872:26)
+    at Parser.pp.parseStatement (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:1737:19)
+    at Parser.pp.parseBlock (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:2009:21)
+    at Parser.pp.parseFunctionBody (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:610:22)
+    at Parser.pp.parseMethod (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:579:8)
+    at Parser.pp.parseClassMethod (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:2155:23)
+    at Parser.pp.parseClass (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:2140:10)
+    at Parser.pp.parseStatement (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:1733:19)
+    at Parser.pp.parseTopLevel (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:1666:21)
+    at Parser.parse (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:1632:17)
+    at Object.parse (F:\Users\react\webpack-demo\node_modules\acorn\dist\acorn.js:885:44)
+    at Parser.parse (F:\Users\react\webpack-demo\node_modules\webpack\lib\Parser.js:902:15)
+    at DependenciesBlock.&lt;anonymous&gt; (F:\Users\react\webpack-demo\node_modules\webpack\lib\NormalModule.js:104:16)
+    at DependenciesBlock.onModuleBuild (F:\Users\react\webpack-demo\node_modules\webpack-core\lib\NormalModuleMixin.js:310:10)
+</code></pre>
 <h4 id="原因是，-loaders-中-test-匹配正则错误-没有引号，-js"><a href="#原因是，-loaders-中-test-匹配正则错误-没有引号，-js" class="headerlink" title="原因是， loaders 中 test 匹配正则错误, 没有引号，/\.js$/"></a>原因是， loaders 中 test 匹配正则错误, 没有引号，<code>/\.js$/</code></h4><h2 id="2016-06-30"><a href="#2016-06-30" class="headerlink" title="2016-06-30"></a>2016-06-30</h2><h3 id="1-webpack-加速！"><a href="#1-webpack-加速！" class="headerlink" title="1. webpack 加速！"></a>1. webpack 加速！</h3><p>看到了 webpack resolve 模块了，添加了alias， extensions 感觉编译速度并不明显， 从7s多到5s多的样子，只是基本的模块，并没有添加逻辑代码。可是在loaders 中.js 的解析中添加了 <code>exclude: path.resolve(__dirname, &#39;node_modules&#39;)</code> 之后编译速度进入1s 内982ms</p>
-<h3 id="2-webpack-添加resolve-和-解析样式文件的-loaders-style-loader-css-loader-less-loader-，报错信息：Uncaught-ReferenceError-require-is-not-defined"><a href="#2-webpack-添加resolve-和-解析样式文件的-loaders-style-loader-css-loader-less-loader-，报错信息：Uncaught-ReferenceError-require-is-not-defined" class="headerlink" title="2. webpack 添加resolve 和 解析样式文件的 loaders: [style-loader, css-loader, less-loader] ，报错信息：Uncaught ReferenceError: require is not defined"></a>2. webpack 添加resolve 和 解析样式文件的 loaders: [style-loader, css-loader, less-loader] ，报错信息：<code>Uncaught ReferenceError: require is not defined</code></h3><p>搜索相关的保存信息<code>Uncaught ReferenceError: require is not defined</code> 得到的相关 参考文章： <a href="https://segmentfault.com/q/1010000004429238" target="_blank" rel="external">webpack打包react-dom后，浏览器报require is not defined错误?</a> </p>
+<h3 id="2-webpack-添加resolve-和-解析样式文件的-loaders-style-loader-css-loader-less-loader-，报错信息：Uncaught-ReferenceError-require-is-not-defined"><a href="#2-webpack-添加resolve-和-解析样式文件的-loaders-style-loader-css-loader-less-loader-，报错信息：Uncaught-ReferenceError-require-is-not-defined" class="headerlink" title="2. webpack 添加resolve 和 解析样式文件的 loaders: [style-loader, css-loader, less-loader] ，报错信息：Uncaught ReferenceError: require is not defined"></a>2. webpack 添加resolve 和 解析样式文件的 loaders: [style-loader, css-loader, less-loader] ，报错信息：<code>Uncaught ReferenceError: require is not defined</code></h3><p>搜索相关的保存信息<code>Uncaught ReferenceError: require is not defined</code> 得到的相关 参考文章： <a href="https://segmentfault.com/q/1010000004429238" target="_blank" rel="noopener">webpack打包react-dom后，浏览器报require is not defined错误?</a> </p>
 <blockquote>
 <p>问题解决，是我将react-dom加入到webpack的noparse 中了，删掉即可！</p>
 </blockquote>
 <p>同样删掉后，并不能解决问题，只好一步步注释回退到原来的状态，检测出错的模块，最后还是检测到是 webpack noParse的问题，不过webpack-dev-server 命令前要先webpack 下打包文件到build目录下，前面一直掉到这个坑里了！</p>
-<h4 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h4><p><a href="http://guoyongfeng.github.io/idoc/html/React%E8%AF%BE%E7%A8%8B%E4%B8%93%E9%A2%98/Webpack%E5%9F%BA%E7%A1%80.html#t77.解析样式文件" target="_blank" rel="external">Webpack基础: 7.解析样式文件</a>，还没有实现热更新功能，所以修改less文件需要重新webpack才能看到结果</p>
-<h3 id="3-react-hot-amp-webpack-dev-server-–inline-–hot-配置热更新是报错！"><a href="#3-react-hot-amp-webpack-dev-server-–inline-–hot-配置热更新是报错！" class="headerlink" title="3. react-hot &amp; webpack-dev-server –inline –hot 配置热更新是报错！"></a>3. react-hot &amp; webpack-dev-server –inline –hot 配置热更新是报错！</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">ERROR <span class="keyword">in</span> ./src/index.js</div><div class="line">Module not found: Error: Cannot resolve <span class="string">'file'</span> or <span class="string">'directory'</span> F:\Users\react\webpack-demo\node_modules\react\dist\react.js/lib/ReactMount <span class="keyword">in</span> F:\Users\react\webpack-demo\src</div><div class="line"> @ ./src/index.js 1:301-332</div><div class="line"></div><div class="line">ERROR <span class="keyword">in</span> ./src/container/App.js</div><div class="line">Module not found: Error: Cannot resolve <span class="string">'file'</span> or <span class="string">'directory'</span> F:\Users\react\webpack-demo\node_modules\react\dist\react.js/lib/ReactMount <span class="keyword">in</span> F:\Users\react\webpack-demo\src\container</div><div class="line"> @ ./src/container/App.js 1:301-332</div><div class="line"></div><div class="line">ERROR <span class="keyword">in</span> ./src/components/Button/Button.js</div><div class="line">Module not found: Error: Cannot resolve <span class="string">'file'</span> or <span class="string">'directory'</span> F:\Users\react\webpack-demo\node_modules\react\dist\react.js/lib/ReactMount <span class="keyword">in</span> F:\Users\react\webpack-demo\src\components\Button</div><div class="line"> @ ./src/components/Button/Button.js 1:301-332</div></pre></td></tr></table></figure>
-<p>注释掉 webpack 中的resolve 的alias 模块 这样就可以解析react &amp; react-dom 模块 通过react-hot。webpack 编译通过，可以运行<code>npm run dev</code>，浏览器打开后报错：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[HMR] Waiting <span class="keyword">for</span> update signal from WDS...</div><div class="line">abstract-xhr.js:132 GET http://localhost:3000/sockjs-node/info?t=1467279375252 net::ERR_CONNECTION_REFUSED</div><div class="line">client:70 [WDS] Disconnected!</div></pre></td></tr></table></figure></p>
+<h4 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h4><p><a href="http://guoyongfeng.github.io/idoc/html/React%E8%AF%BE%E7%A8%8B%E4%B8%93%E9%A2%98/Webpack%E5%9F%BA%E7%A1%80.html#t77.解析样式文件" target="_blank" rel="noopener">Webpack基础: 7.解析样式文件</a>，还没有实现热更新功能，所以修改less文件需要重新webpack才能看到结果</p>
+<h3 id="3-react-hot-amp-webpack-dev-server-—inline-—hot-配置热更新是报错！"><a href="#3-react-hot-amp-webpack-dev-server-—inline-—hot-配置热更新是报错！" class="headerlink" title="3. react-hot &amp; webpack-dev-server —inline —hot 配置热更新是报错！"></a>3. react-hot &amp; webpack-dev-server —inline —hot 配置热更新是报错！</h3><pre><code class="lang-bash">ERROR in ./src/index.js
+Module not found: Error: Cannot resolve &#39;file&#39; or &#39;directory&#39; F:\Users\react\webpack-demo\node_modules\react\dist\react.js/lib/ReactMount in F:\Users\react\webpack-demo\src
+ @ ./src/index.js 1:301-332
+
+ERROR in ./src/container/App.js
+Module not found: Error: Cannot resolve &#39;file&#39; or &#39;directory&#39; F:\Users\react\webpack-demo\node_modules\react\dist\react.js/lib/ReactMount in F:\Users\react\webpack-demo\src\container
+ @ ./src/container/App.js 1:301-332
+
+ERROR in ./src/components/Button/Button.js
+Module not found: Error: Cannot resolve &#39;file&#39; or &#39;directory&#39; F:\Users\react\webpack-demo\node_modules\react\dist\react.js/lib/ReactMount in F:\Users\react\webpack-demo\src\components\Button
+ @ ./src/components/Button/Button.js 1:301-332
+</code></pre>
+<p>注释掉 webpack 中的resolve 的alias 模块 这样就可以解析react &amp; react-dom 模块 通过react-hot。webpack 编译通过，可以运行<code>npm run dev</code>，浏览器打开后报错：</p>
+<pre><code class="lang-bash">[HMR] Waiting for update signal from WDS...
+abstract-xhr.js:132 GET http://localhost:3000/sockjs-node/info?t=1467279375252 net::ERR_CONNECTION_REFUSED
+client:70 [WDS] Disconnected!
+</code></pre>
 <p>修改 webpack-dev-server 的port 为3000后解决，端口号要一致。 不过并没有实现热更新功能（编辑器修改，浏览器预览效果）</p>
-<p><a href="http://guoyongfeng.github.io/idoc/html/React%E8%AF%BE%E7%A8%8B%E4%B8%93%E9%A2%98/%E4%BD%BF%E7%94%A8Webpack%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E6%80%81%E5%B7%A5%E4%BD%9C%E6%B5%81.html" target="_blank" rel="external">使用Webpack搭建开发环境工作流</a> 关于自动刷新， 和 HMR 的配置 关于 <a href="http://www.jianshu.com/p/941bfaf13be1" target="_blank" rel="external">WEBPACK DEV SERVER</a> 关于webpack-dev-server 的说明挺详细的，提到了关于热更新不起作用的 原因 <a href="https://github.com/gaearon/react-hot-loader/blob/master/docs/Troubleshooting.md#the-following-modules-couldnt-be-hot-updated-they-would-need-a-full-reload" target="_blank" rel="external">The following modules couldn’t be hot updated: (They would need a full reload!)</a></p>
+<p><a href="http://guoyongfeng.github.io/idoc/html/React%E8%AF%BE%E7%A8%8B%E4%B8%93%E9%A2%98/%E4%BD%BF%E7%94%A8Webpack%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E6%80%81%E5%B7%A5%E4%BD%9C%E6%B5%81.html" target="_blank" rel="noopener">使用Webpack搭建开发环境工作流</a> 关于自动刷新， 和 HMR 的配置 关于 <a href="http://www.jianshu.com/p/941bfaf13be1" target="_blank" rel="noopener">WEBPACK DEV SERVER</a> 关于webpack-dev-server 的说明挺详细的，提到了关于热更新不起作用的 原因 <a href="https://github.com/gaearon/react-hot-loader/blob/master/docs/Troubleshooting.md#the-following-modules-couldnt-be-hot-updated-they-would-need-a-full-reload" target="_blank" rel="noopener">The following modules couldn’t be hot updated: (They would need a full reload!)</a></p>
 <blockquote>
 <ol>
 <li>webpack dev server 中提到了前后端配合的相关配置<ol>
@@ -293,442 +307,378 @@
 <blockquote>
 <p>loader 中关于js 的loader配置改成了loaders 后面是数组，如果loader 通过! 链接的话也可以</p>
 </blockquote>
-<h2 id="2016-07-04"><a href="#2016-07-04" class="headerlink" title="2016-07-04"></a>2016-07-04</h2><h3 id="1-React-Router-使用教程"><a href="#1-React-Router-使用教程" class="headerlink" title="1. React Router 使用教程"></a>1. <a href="http://www.ruanyifeng.com/blog/2016/05/react_router.html" target="_blank" rel="external">React Router 使用教程</a></h3><blockquote>
+<h2 id="2016-07-04"><a href="#2016-07-04" class="headerlink" title="2016-07-04"></a>2016-07-04</h2><h3 id="1-React-Router-使用教程"><a href="#1-React-Router-使用教程" class="headerlink" title="1. React Router 使用教程"></a>1. <a href="http://www.ruanyifeng.com/blog/2016/05/react_router.html" target="_blank" rel="noopener">React Router 使用教程</a></h3><blockquote>
 <p>入门挺不错的！</p>
 </blockquote>
-<h3 id="2-React-Mixin-的前世今生"><a href="#2-React-Mixin-的前世今生" class="headerlink" title="2. React Mixin 的前世今生"></a>2. <a href="https://zhuanlan.zhihu.com/p/20361937" target="_blank" rel="external">React Mixin 的前世今生</a></h3><blockquote>
+<h3 id="2-React-Mixin-的前世今生"><a href="#2-React-Mixin-的前世今生" class="headerlink" title="2. React Mixin 的前世今生"></a>2. <a href="https://zhuanlan.zhihu.com/p/20361937" target="_blank" rel="noopener">React Mixin 的前世今生</a></h3><blockquote>
 <p>有点高深的内容，可以完全没读懂啊！</p>
 </blockquote>
-<h3 id="3-github-notetaker应用开发"><a href="#3-github-notetaker应用开发" class="headerlink" title="3. github-notetaker应用开发"></a>3. <a href="http://guoyongfeng.github.io/idoc/html/React%E8%AF%BE%E7%A8%8B%E4%B8%93%E9%A2%98/github-notetaker%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91.html" target="_blank" rel="external">github-notetaker应用开发</a></h3><h4 id="7-接入真实的数据"><a href="#7-接入真实的数据" class="headerlink" title="7.接入真实的数据"></a><a href="http://guoyongfeng.github.io/idoc/html/React%E8%AF%BE%E7%A8%8B%E4%B8%93%E9%A2%98/github-notetaker%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91.html#t97.接入真实的数据" target="_blank" rel="external">7.接入真实的数据</a></h4><blockquote>
+<h3 id="3-github-notetaker应用开发"><a href="#3-github-notetaker应用开发" class="headerlink" title="3. github-notetaker应用开发"></a>3. <a href="http://guoyongfeng.github.io/idoc/html/React%E8%AF%BE%E7%A8%8B%E4%B8%93%E9%A2%98/github-notetaker%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91.html" target="_blank" rel="noopener">github-notetaker应用开发</a></h3><h4 id="7-接入真实的数据"><a href="#7-接入真实的数据" class="headerlink" title="7.接入真实的数据"></a><a href="http://guoyongfeng.github.io/idoc/html/React%E8%AF%BE%E7%A8%8B%E4%B8%93%E9%A2%98/github-notetaker%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91.html#t97.接入真实的数据" target="_blank" rel="noopener">7.接入真实的数据</a></h4><blockquote>
 <p>用到了mixin</p>
 </blockquote>
-<h2 id="2016-07-05"><a href="#2016-07-05" class="headerlink" title="2016-07-05"></a>2016-07-05</h2><p>github-note-taker 中使用了firebase ，直接写代码并没有运行，查看了 <a href="https://console.firebase.google.com/" target="_blank" rel="external">firebase</a>官网，已经 <a href="https://github.com/firebase/reactfire/blob/master/docs/guide.md" target="_blank" rel="external">ReactFire Guild</a></p>
+<h2 id="2016-07-05"><a href="#2016-07-05" class="headerlink" title="2016-07-05"></a>2016-07-05</h2><p>github-note-taker 中使用了firebase ，直接写代码并没有运行，查看了 <a href="https://console.firebase.google.com/" target="_blank" rel="noopener">firebase</a>官网，已经 <a href="https://github.com/firebase/reactfire/blob/master/docs/guide.md" target="_blank" rel="noopener">ReactFire Guild</a></p>
 <blockquote>
 <p>最终没有使用 firebase 通过 state 中的notes mock了相应的数据</p>
 </blockquote>
-<h3 id="1-github-note-taker-调试完成，属性了组织开发react的方式和-react-router的基本用法"><a href="#1-github-note-taker-调试完成，属性了组织开发react的方式和-react-router的基本用法" class="headerlink" title="1. github-note-taker 调试完成，属性了组织开发react的方式和 react-router的基本用法"></a>1. github-note-taker 调试完成，属性了组织开发react的方式和 react-router的基本用法</h3><h3 id="2-React-router路由实践"><a href="#2-React-router路由实践" class="headerlink" title="2. React-router路由实践"></a>2. <a href="http://guoyongfeng.github.io/idoc/html/React%E8%AF%BE%E7%A8%8B%E4%B8%93%E9%A2%98/React-router%E8%B7%AF%E7%94%B1%E5%AE%9E%E8%B7%B5.html" target="_blank" rel="external">React-router路由实践</a></h3><blockquote>
+<h3 id="1-github-note-taker-调试完成，属性了组织开发react的方式和-react-router的基本用法"><a href="#1-github-note-taker-调试完成，属性了组织开发react的方式和-react-router的基本用法" class="headerlink" title="1. github-note-taker 调试完成，属性了组织开发react的方式和 react-router的基本用法"></a>1. github-note-taker 调试完成，属性了组织开发react的方式和 react-router的基本用法</h3><h3 id="2-React-router路由实践"><a href="#2-React-router路由实践" class="headerlink" title="2. React-router路由实践"></a>2. <a href="http://guoyongfeng.github.io/idoc/html/React%E8%AF%BE%E7%A8%8B%E4%B8%93%E9%A2%98/React-router%E8%B7%AF%E7%94%B1%E5%AE%9E%E8%B7%B5.html" target="_blank" rel="noopener">React-router路由实践</a></h3><blockquote>
 <p>明天coding 下</p>
 </blockquote>
-<h3 id="3-React-AJAX的最佳实践"><a href="#3-React-AJAX的最佳实践" class="headerlink" title="3. React-AJAX的最佳实践"></a>3. <a href="http://guoyongfeng.github.io/idoc/html/React%E8%AF%BE%E7%A8%8B%E4%B8%93%E9%A2%98/React-AJAX%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5.html" target="_blank" rel="external">React-AJAX的最佳实践</a></h3><blockquote>
+<h3 id="3-React-AJAX的最佳实践"><a href="#3-React-AJAX的最佳实践" class="headerlink" title="3. React-AJAX的最佳实践"></a>3. <a href="http://guoyongfeng.github.io/idoc/html/React%E8%AF%BE%E7%A8%8B%E4%B8%93%E9%A2%98/React-AJAX%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5.html" target="_blank" rel="noopener">React-AJAX的最佳实践</a></h3><blockquote>
 <p>作者并没写完，只是给提纲！</p>
 </blockquote>
-<h2 id="2016-07-06"><a href="#2016-07-06" class="headerlink" title="2016-07-06"></a>2016-07-06</h2><h3 id="1-coding-React-router路由实践"><a href="#1-coding-React-router路由实践" class="headerlink" title="1. coding React-router路由实践"></a>1. coding <a href="link">React-router路由实践</a></h3><h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">invariant.js:39 Uncaught Invariant Violation: findComponentRoot(..., .0): Unable to find element. This probably means the DOM was unexpectedly mutated (e.g., by the browser), usually due to forgetting a &lt;tbody&gt; when using tables, nesting tags like &lt;form&gt;, &lt;p&gt;, or &lt;a&gt;, or using non-SVG elements <span class="keyword">in</span> an &lt;svg&gt; parent. Try inspecting the child nodes of the element with React ID ``.</div></pre></td></tr></table></figure>
+<h2 id="2016-07-06"><a href="#2016-07-06" class="headerlink" title="2016-07-06"></a>2016-07-06</h2><h3 id="1-coding-React-router路由实践"><a href="#1-coding-React-router路由实践" class="headerlink" title="1. coding React-router路由实践"></a>1. coding <a href="link">React-router路由实践</a></h3><h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><pre><code class="lang-bash">invariant.js:39 Uncaught Invariant Violation: findComponentRoot(..., .0): Unable to find element. This probably means the DOM was unexpectedly mutated (e.g., by the browser), usually due to forgetting a &lt;tbody&gt; when using tables, nesting tags like &lt;form&gt;, &lt;p&gt;, or &lt;a&gt;, or using non-SVG elements in an &lt;svg&gt; parent. Try inspecting the child nodes of the element with React ID ``.
+</code></pre>
 <h2 id="2016-07-11"><a href="#2016-07-11" class="headerlink" title="2016-07-11"></a>2016-07-11</h2><p>看了redux 入门，进入公司项目</p>
 <h2 id="2016-07-27"><a href="#2016-07-27" class="headerlink" title="2016-07-27"></a>2016-07-27</h2><p>继续吧！期望这个星期，这个月底能完成 hackathon-blog 项目，现在先把redux熟悉</p>
 <h2 id="2016-08-02"><a href="#2016-08-02" class="headerlink" title="2016-08-02"></a>2016-08-02</h2><p>redux 入门的todo demo 调试完成，next: Middleware</p>
-<p><a href="https://github.com/lewis617/react-redux-tutorial#reactredux系列教程" target="_blank" rel="external">React+Redux系列教程</a></p>
+<p><a href="https://github.com/lewis617/react-redux-tutorial#reactredux系列教程" target="_blank" rel="noopener">React+Redux系列教程</a></p>
 <h2 id="2016-08-04"><a href="#2016-08-04" class="headerlink" title="2016-08-04"></a>2016-08-04</h2><ol>
-<li><a href="https://zhuanlan.zhihu.com/p/21386862?refer=purerender" target="_blank" rel="external">React实践 - Component Generator</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/20597452" target="_blank" rel="external">redux middleware 详解</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/21386862?refer=purerender" target="_blank" rel="noopener">React实践 - Component Generator</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/20597452" target="_blank" rel="noopener">redux middleware 详解</a></li>
 </ol>
-</span>
-      
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-05-09T23:11:06.000Z" itemprop="dateUpdated">2017-05-10 07:11:06</time>
+</span><br>
+
+
+        
+        文章发布地址：<a href="/2016/07/06/React课程学习/" target="_blank" rel="external">http://sumaolin.com/2016/07/06/React课程学习/</a>
+        
     </div>
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/F2E/" rel="tag">#F2E</a>
-          
-            <a href="/tags/React/" rel="tag">#React</a>
-          
-            <a href="/tags/Redux/" rel="tag">#Redux</a>
-          
-        </div>
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/06/06/hackathon-blog/" rel="next" title="hackathon blog">
-                <i class="fa fa-chevron-left"></i> hackathon blog
-              </a>
-            
-          </div>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/08/readList-201608/" rel="prev" title="readList 201608">
-                readList 201608 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
+    
+    <footer>
+        <a href="http://sumaolin.com">
+            <img src="/img/avatar.jpeg" alt="Kevin Su">
+            Kevin Su
+        </a>
     </footer>
-  </article>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/F2E/">F2E</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redux/">Redux</a></li></ul>
 
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sumaolin.com/2016/07/06/React课程学习/&title=《React课程学习》 — 苏茂林&pic=http://sumaolin.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sumaolin.com/2016/07/06/React课程学习/&title=《React课程学习》 — 苏茂林&source=上一篇是关于react 资料的搜集，内容太多，后面参照hackathon-blog 中给出的关于react的资料: React课程学习, 整个资料循序渐进..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sumaolin.com/2016/07/06/React课程学习/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《React课程学习》 — 苏茂林&url=http://sumaolin.com/2016/07/06/React课程学习/&via=http://sumaolin.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sumaolin.com/2016/07/06/React课程学习/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
  </div>
 
-        
 
-        
-          <div class="comments" id="comments">
-            
-          </div>
-        
-      </div>
 
-      
-        
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/08/08/readList-201608/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">readList 201608</h4>
+      </a>
     </div>
-  </div>
+  
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="http://tp4.sinaimg.cn/1765384767/180/5749265416/1" alt="Kevin Su" itemprop="image"/>
-          <p class="site-author-name" itemprop="name">Kevin Su</p>
-        </div>
-        <p class="site-description motion-element" itemprop="description">苏茂林, 个人博客, Kevin.Su's Blog, 关于前端技术的的杂记！</p>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">17</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
-
-          <div class="site-state-item site-state-categories">
-            
-              <span class="site-state-item-count">7</span>
-              <span class="site-state-item-name">分类</span>
-              
-          </div>
-
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">29</span>
-              <span class="site-state-item-name">标签</span>
-              </a>
-          </div>
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="menu-item-icon icon-next-feed"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-        
-        
-
-        <div class="links-of-author motion-element">
-          
-        </div>
-
-      </section>
-
-      
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator"></div>
-          <div class="post-toc">
-            
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-06-29"><span class="nav-number">1.</span> <span class="nav-text">2016-06-29</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Error"><span class="nav-number">1.1.</span> <span class="nav-text">1. Error:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原因是，-loaders-中-test-匹配正则错误-没有引号，-js"><span class="nav-number">1.1.1.</span> <span class="nav-text">原因是， loaders 中 test 匹配正则错误, 没有引号，/\.js$/</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-06-30"><span class="nav-number">2.</span> <span class="nav-text">2016-06-30</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-webpack-加速！"><span class="nav-number">2.1.</span> <span class="nav-text">1. webpack 加速！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-webpack-添加resolve-和-解析样式文件的-loaders-style-loader-css-loader-less-loader-，报错信息：Uncaught-ReferenceError-require-is-not-defined"><span class="nav-number">2.2.</span> <span class="nav-text">2. webpack 添加resolve 和 解析样式文件的 loaders: [style-loader, css-loader, less-loader] ，报错信息：Uncaught ReferenceError: require is not defined</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#提示"><span class="nav-number">2.2.1.</span> <span class="nav-text">提示</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-react-hot-amp-webpack-dev-server-–inline-–hot-配置热更新是报错！"><span class="nav-number">2.3.</span> <span class="nav-text">3. react-hot & webpack-dev-server –inline –hot 配置热更新是报错！</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法"><span class="nav-number">2.3.1.</span> <span class="nav-text">解决办法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-07-04"><span class="nav-number">3.</span> <span class="nav-text">2016-07-04</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-React-Router-使用教程"><span class="nav-number">3.1.</span> <span class="nav-text">1. React Router 使用教程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-React-Mixin-的前世今生"><span class="nav-number">3.2.</span> <span class="nav-text">2. React Mixin 的前世今生</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-github-notetaker应用开发"><span class="nav-number">3.3.</span> <span class="nav-text">3. github-notetaker应用开发</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#7-接入真实的数据"><span class="nav-number">3.3.1.</span> <span class="nav-text">7.接入真实的数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-07-05"><span class="nav-number">4.</span> <span class="nav-text">2016-07-05</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-github-note-taker-调试完成，属性了组织开发react的方式和-react-router的基本用法"><span class="nav-number">4.1.</span> <span class="nav-text">1. github-note-taker 调试完成，属性了组织开发react的方式和 react-router的基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-React-router路由实践"><span class="nav-number">4.2.</span> <span class="nav-text">2. React-router路由实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-React-AJAX的最佳实践"><span class="nav-number">4.3.</span> <span class="nav-text">3. React-AJAX的最佳实践</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-07-06"><span class="nav-number">5.</span> <span class="nav-text">2016-07-06</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-coding-React-router路由实践"><span class="nav-number">5.1.</span> <span class="nav-text">1. coding React-router路由实践</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1"><span class="nav-number">5.1.1.</span> <span class="nav-text">1.</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-07-11"><span class="nav-number">6.</span> <span class="nav-text">2016-07-11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-07-27"><span class="nav-number">7.</span> <span class="nav-text">2016-07-27</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-08-02"><span class="nav-number">8.</span> <span class="nav-text">2016-08-02</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2016-08-04"><span class="nav-number">9.</span> <span class="nav-text">2016-08-04</span></a></li></ol></div>
-            
-          </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
-        </section>
-      
-
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/06/06/hackathon-blog/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">hackathon blog</h4>
+      </a>
     </div>
-  </aside>
+  
+</nav>
 
 
-      
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="comments" id="comments">
+        <div id="gitalk-container"></div>
+        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script>
+            var id = location.pathname
+            if (location.pathname.length > 50) {
+              id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+            }
+            const gitalk = new Gitalk({
+              clientID: '5ab6d961fa632da0dfa5',
+              clientSecret: '27a8bcd3e86af92a96b8ca00f4ffaa95c80b53de',
+              repo: 'sumaolin.github.com',
+              owner: 'sumaolin',
+              admin: ['sumaolin'],
+              id: id,      // Ensure uniqueness and length less than 50
+              title: document.title.split('|')[0],
+              distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+            gitalk.render('gitalk-container')
+        </script>
+    </section>
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        感谢支持！
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-item switch">切换</span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+            <p>
+                
+                    <span>
+                        <a href="/atom.xml" target="_blank" class="rss" title="rss">
+                            <i class="icon icon-lg icon-rss"></i>
+                        </a>
+                    </span>
+                    
+                        <span>
+                            博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a>
+                        </span>
+            </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>
+                Kevin Su &copy;
+                    
+                        2018 -
+                            
+                                2020
+            </span>
+            <span>
+                
+                        Power by
+                        <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+                        <a href="https://github.com/abelsu7/hexo-theme-indigo-plus" target="_blank">indigo plus</a>
+                        <p>Hosted by <a href="https://coding.net/pages" style="font-weight: bold">Coding Pages</a></p>
+            </span>
+        </p>
+    </div>
+</footer>
+
     </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner"> <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Kevin Su</span>
-</div>
-
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
-  </a>
-</div>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+<a href="javascript:;" id="gobottom" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-comments"></span></a>
 
 
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://sumaolin.com/2016/07/06/React课程学习/&title=《React课程学习》 — 苏茂林&pic=http://sumaolin.com/img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://sumaolin.com/2016/07/06/React课程学习/&title=《React课程学习》 — 苏茂林&source=上一篇是关于react 资料的搜集，内容太多，后面参照hackathon-blog 中给出的关于react的资料: React课程学习, 整个资料循序渐进..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sumaolin.com/2016/07/06/React课程学习/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《React课程学习》 — 苏茂林&url=http://sumaolin.com/2016/07/06/React课程学习/&via=http://sumaolin.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://sumaolin.com/2016/07/06/React课程学习/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
  </div>
-    </footer>
-
-    <div class="back-to-top"></div>
-  </div>
-
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  
-  
-    
-    
-
-  
 
 
-  
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
-  
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.2" id="motion.global"></script>
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMUlEQVR42u3aQY7CMAwFUO5/6Y40KyQE/bbLaJq8rCooxS+L1LHzeMTj+B3P18/j9c788+SZlw0MDIzbMo6P45VRDToJ691/JbFhYGDsw8gfnXzbm6bq9GFgYGBM0sHkejJBGBgYGNVQetvUZJHFwMDAmKduk+JdnhpevBfHwMC4IaPXGPib66/3NzAwMP494xiMJB3MN8OjSDAwMJZm5KH0QkxKafmW+CRCDAyMRRm9Iw5JcT8pkF3VFsXAwNiBMTm2lX+bFMuqSWf5jYGBgXFDxiTJqz6nWjFLpvukH4uBgbEoo7qxnBfUeonpyYYWAwNjOUae9k3SwasOZLydUAwMjEUZ88ZkL6WrBnryZAwMjG0YvQflBbjqe6DwGsDAwNiAUQ2l2pIsZKnFlPGkE4uBgbEQo5og5oWz3qY3+dXb9wYGBsYGjByQH96qfp5HgoGBsRsjaR/2UrpqWlk+rIaBgbENo9q8zH9VLb3laSUGBsYOjPyoxFUNzrypWY4BAwNjG0byZ8mCmB/FqB7LeBsVBgbGNozeMYtqWa3aKigU3TAwMBZlVMv6k7Vusrj3DmdgYGDcnXEUxzd4SXOieWYEAwNjCUZv8e0tmpMt8aTNiYGBsQZjvsjO76+mleW3BwYGxhKMajlsUlzrrf0nMAwMDIy4iN9LJXuNgWgWMTAwNmN8biVWC2fJJxf0MTAwMBZi9Ir1Obu6SS4fsMDAwFiaMW9G5lvfHiy5HwMDY1HGD2xxIuDLF7OzAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
 
 
 
 
-  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+    <script src="//cdn.jsdelivr.net/npm/node-waves@0.7.6/src/js/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 0.4 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
 </script>
 
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
+<script src="/js/main.min.js?v=1.7.2"></script>
 
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
 
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
 
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
+<script src="/js/search.min.js?v=1.7.2" async></script>
 
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
 
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
 
-    // Expand sidebar on post detail page by default, when post has a toc.
-    var $tocContent = $('.post-toc-content');
-    if (isDesktop() && CONFIG.sidebar === 'post') {
-      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-        displaySidebar();
-      }
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script src="/js/prism.js"></script>
+<script src="/js/prism-vim.js"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
     }
   });
 </script>
 
-
-
-  <script type="text/javascript">
-    $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
-      if (isMobile()) {
-        FastClick.attach(document.body);
-      }
-
-      motionIntegrator.bootstrap();
-    });
-  </script>
-
-  
-  
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $("#posts").find('img').lazyload({
-        placeholder: "/images/loading.gif",
-        effect: "fadeIn"
-      });
-    });
-  </script>
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>
